@@ -4,22 +4,16 @@ import {
   BiCheckCircle,
   BiBuoy,
   BiCog,
-  BiCommentAdd,
-  BiCreditCard,
-  BiEnvelope,
   BiHome,
-  BiNews,
-  BiPurchaseTagAlt,
-  BiRecycle,
   BiCircle,
   BiCompass,
-  BiWallet,
 } from 'react-icons/bi'
 import { AccountSwitcher } from './AccountSwitcher'
 import { NavGroup } from './NavGroup'
 import { NavItem } from './NavItem'
+import { StepHead } from '@components/StepHead'
 
-export const Shell = () => {
+export const Shell = ({ children }) => {
   return (
     <Box height="100vh" overflow="hidden" position="relative">
       <Flex h="full" id="app-container">
@@ -58,13 +52,7 @@ export const Shell = () => {
           </Flex>
         </Box>
         <Box bg={mode('white', 'gray.800')} flex="1" p="6">
-          <Box
-            w="full"
-            h="full"
-            rounded="lg"
-            border="3px dashed currentColor"
-            color={mode('gray.200', 'gray.700')}
-          />
+          <main>{ children }</main>
         </Box>
       </Flex>
     </Box>

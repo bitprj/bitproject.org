@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
+import Layout, { siteTitle } from '@components/layout'
 import { Shell } from '@components/shell'
+import { StepHead } from '@components/StepHead'
 
 export default function Learn() {
   return (
@@ -8,7 +9,9 @@ export default function Learn() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <Shell />
+      <Shell>
+        <StepHead />
+      </Shell>
     </Layout>
   )
 }

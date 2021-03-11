@@ -12,7 +12,7 @@ export const siteTitle = 'Next.js Sample Website'
 export default function Layout({ children, home }) {
   return (
     <div>
-      <Navbar />
+      <Navbar style={{zIndex: '100'}}  />
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -36,7 +36,6 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
-      <Footer />
     </div>
   )
 }
