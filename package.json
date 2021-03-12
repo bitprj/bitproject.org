@@ -17,6 +17,7 @@
     "chakra-ui-markdown-renderer": "^1.1.0",
     "date-fns": "^2.11.1",
     "framer-motion": "^3.10.2",
+    "fs": "0.0.1-security",
     "graphql": "^15.5.0",
     "gray-matter": "^4.0.2",
     "i": "^0.3.6",

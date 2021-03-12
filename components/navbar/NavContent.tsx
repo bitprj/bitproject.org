@@ -6,6 +6,7 @@ import {
   HStack,
   useDisclosure,
   VisuallyHidden,
+  Spacer,
   useColorModeValue as mode,
 } from '@chakra-ui/react'
 import * as React from 'react'
@@ -70,11 +71,9 @@ const DesktopNavContent = (props: FlexProps) => {
         ))}
       </HStack>
       <HStack spacing="8" minW="240px" justify="space-between">
-        <Box as="a" href="#" color={mode('blue.600', 'blue.300')} fontWeight="bold">
-          Sign In
-        </Box>
+      <Spacer />
         <Button as="a" href="#" colorScheme="blue" fontWeight="bold">
-          Sign up for free
+          Login with Github
         </Button>
       </HStack>
     </Flex>

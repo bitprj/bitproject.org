@@ -14,7 +14,7 @@ export interface Link {
 }
 
 export const links: Link[] = [
-  { label: 'Showcase', href: '#' },
+  { label: 'Showcase', href: '/blog' },
   {
     label: 'Resources',
     children: [
