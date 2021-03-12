@@ -54,7 +54,7 @@ const MobileNavContext = (props: FlexProps) => {
 const DesktopNavContent = (props: FlexProps) => {
   return (
     <Flex className="nav-content__desktop" align="center" justify="space-between" {...props}>
-      <Box as="a" href="#" rel="home">
+      <Box as="a" href="/" rel="home">
         <VisuallyHidden>Envelope</VisuallyHidden>
         <Logo h="6" iconColor="blue.500" />
       </Box>
