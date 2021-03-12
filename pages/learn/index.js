@@ -9,7 +9,7 @@ import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
 import ReactMarkdown from 'react-markdown'
 import { Box, Circle, Flex, Stack, useColorModeValue as mode } from '@chakra-ui/react'
 import { Cabin } from '@components/hero/cabin'
-import AccessDenied from '../components/access-denied'
+import AccessDenied from '../../components/access-denied'
 import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/client'
 
