@@ -23,11 +23,10 @@ import {
           >
             <Box flex="1" maxW={{ lg: 'xl' }} pt="10">
               <Heading as="h1" size="3xl" mt="8" fontWeight="extrabold">
-              Code Your First App with help
+              Learn directly on Github
               </Heading>
               <Text color={mode('gray.600', 'gray.400')} mt="5" fontSize="xl">
-              Knowing where to start with your first project is hard. 
-              We equip you with the skills to ship your first App!
+              The ever helpful virtual camp counselor, Greg will guide you throughout your adventure. Be sure to follow his rules and most importantly, have La Croix. (not sponsored)
               </Text>
               <Button
                 mt="8"
@@ -46,7 +45,7 @@ import {
               pos="relative"
               marginEnd="-20rem"
               w="56rem"
-              src="https://res.cloudinary.com/adebayosegun/image/upload/v1611835286/Chakra%20UI/screenshot-base.png"
+              src="https://user-images.githubusercontent.com/10321085/110902644-1489c300-82bb-11eb-883e-66a6b42b59f6.png"
               alt="Screening talent"
             />
           </Stack>

@@ -5,6 +5,7 @@ import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 import { Hero } from '@components/hero'
+import { Dark } from '@components/hero/dark'
 
 export default function Home({ allPostsData }) {
   return (
@@ -12,6 +13,7 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <Dark />
       <Hero />
     </Layout>
   )
