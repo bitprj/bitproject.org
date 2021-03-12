@@ -16,6 +16,7 @@ import { NavMenu } from './NavMenu'
 import { Submenu } from './Submenu'
 import { ToggleButton } from './ToggleButton'
 import { links } from './_data'
+import { signIn, signOut, useSession } from 'next-auth/client'
 
 const MobileNavContext = (props: FlexProps) => {
   const { isOpen, onToggle } = useDisclosure()
@@ -72,7 +73,11 @@ const DesktopNavContent = (props: FlexProps) => {
       </HStack>
       <HStack spacing="8" minW="240px" justify="space-between">
       <Spacer />
-        <Button as="a" href="#" colorScheme="blue" fontWeight="bold">
+        <Button as="a" href={`/api/auth/signin`}
+                onClick={(e) => {
+                  e.preventDefault()
+                  signIn()
+                }} colorScheme="blue" fontWeight="bold">
           Login with Github
         </Button>
       </HStack>
