@@ -1,6 +1,7 @@
 import NextAuth from "next-auth"
 import Providers from "next-auth/providers"
 import jwt from "jsonwebtoken";
+import dataUpdate from "../dataUpdate.js"
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
@@ -98,7 +99,7 @@ export default NextAuth({
     },
     async jwt(token, user, account, profile, isNewUser) { 
       const isUserSignedIn = user ? true : false;
-      await fetch('https://campdevnew-git-emily-bitproject.vercel.app/api/dataUpdate')
+      await dataUpdate(user.name, user.email)
       if(isUserSignedIn) {
         token.id = user.id.toString();
       }
