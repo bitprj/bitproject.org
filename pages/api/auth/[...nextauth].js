@@ -1,6 +1,6 @@
 import NextAuth from "next-auth"
 import Providers from "next-auth/providers"
-import { useSession } from 'next-auth/client'
+import jwt from "jsonwebtoken";
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
@@ -12,6 +12,18 @@ export default NextAuth({
       clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
+  // Database optional. MySQL, Maria DB, Postgres and MongoDB are supported.
+  // https://next-auth.js.org/configuration/databases
+  //
+  // Notes:
+  // * You must to install an appropriate node_module for your database
+  // * The Email provider requires a database (OAuth providers do not)
+  // database: process.env.DATABASE_URL,
+
+  // The secret should be set to a reasonably long random string.
+  // It is used to sign cookies and to sign and encrypt JSON Web Tokens, unless
+  // a separate secret is defined explicitly for encrypting the JWT.
+  secret: process.env.SECRET,
 
   session: {
     // Use JSON Web Tokens for session instead of database sessions.
@@ -31,10 +43,35 @@ export default NextAuth({
   // JSON Web tokens are only used for sessions if the `jwt: true` session
   // option is set - or by default if no database is specified.
   // https://next-auth.js.org/configuration/options#jwt
-//   secret: process.env.SECRET,
-//   jwt: {
-//     secret: process.env.JWT_SIGNING_PRIVATE_KEY,
-//   },
+  jwt: {
+    // A secret to use for key generation (you should set this explicitly)
+    secret: process.env.SECRET,
+    // Set to true to use encryption (default: false)
+    // encryption: true,
+    // You can define your own encode/decode functions for signing and encryption
+    // if you want to override the default behaviour.
+    encode: async ({ secret, token, maxAge }) => {
+      const jwtClaims = {
+        "sub": token.sub.toString() ,
+        "name": token.name ,
+        "email": token.email,
+        "iat": Date.now() / 1000,
+        "exp": Math.floor(Date.now() / 1000) + (24*60*60),
+        "https://hasura.io/jwt/claims": {
+          "x-hasura-allowed-roles": ["user"],
+          "x-hasura-default-role": "user",
+          "x-hasura-role": "user",
+          "x-hasura-user-id": token.id,
+        }
+      };
+      const encodedToken = jwt.sign(jwtClaims, secret, { algorithm: 'HS256'});
+      return encodedToken;
+    },
+    decode: async ({ secret, token, maxAge }) => {
+      const decodedToken = jwt.verify(token, secret, { algorithms: ['HS256']});
+      return decodedToken;
+    },
+  },
 
   // You can define custom pages to override the built-in pages.
   // The routes shown here are the default URLs that will be used when a custom
@@ -45,28 +82,29 @@ export default NextAuth({
     // signOut: '/api/auth/signout', // Displays form with sign out button
     // error: '/api/auth/error', // Error code passed in query string as ?error=
     // verifyRequest: '/api/auth/verify-request', // Used for check email page
+    // newUser: null // If set, new users will be directed here on first sign in
   },
 
   // Callbacks are asynchronous functions you can use to control what happens
   // when an action is performed.
   // https://next-auth.js.org/configuration/callbacks
   callbacks: {
-//     async jwt(token, user, account, profile, isNewUser) {
-//       // Add access_token to the token right after signin
-//       if (account?.accessToken) {
-//         token.accessToken = account.accessToken
-//       }
-//       console.log(token)
-//       return token
-//     }
-    // async redirect(url, baseUrl) {
-    //     if (session) {
-    //         var redirect = `baseurl${"/learn"}`
-    //     } else {
-    //         var redirect = baseUrl
-    //     }
-    //     return redirect
-    // },
+    // async signIn(user, account, profile) { return true },
+    // async redirect(url, baseUrl) { return baseUrl },
+    async session(session, token) { 
+      const encodedToken = jwt.sign(token, process.env.SECRET, { algorithm: 'HS256'});
+      session.id = token.id;
+      session.token = encodedToken;
+      return Promise.resolve(session);
+    },
+    async jwt(token, user, account, profile, isNewUser) { 
+      const isUserSignedIn = user ? true : false;
+      await fetch('/api/dataUpdate')
+      if(isUserSignedIn) {
+        token.id = user.id.toString();
+      }
+      return Promise.resolve(token);
+    }
   },
 
   // Events are useful for logging
@@ -74,5 +112,5 @@ export default NextAuth({
   events: {},
 
   // Enable debug messages in the console if you are having problems
-  debug: false,
+  debug: true,
 })
