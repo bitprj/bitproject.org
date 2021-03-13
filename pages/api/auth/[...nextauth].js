@@ -102,7 +102,11 @@ export default NextAuth({
       if (account?.accessToken) {
         token.accessToken = account.accessToken
       }
-      await dataUpdate(token.name, token.accessToken)
+      try {
+        await dataUpdate(token.name, token.accessToken)
+      } catch (e) {
+          console.log("Not first user")
+      }
       if(isUserSignedIn) {
         token.id = user.id.toString();
       }
