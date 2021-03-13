@@ -14,8 +14,7 @@ export default async (name, token) => {
         return
     }
     // Sort by primary email - the user may have several emails, but only one of them will be primary
-    const sortedEmails = emails.sort((a, b) => b.primary - a.primary)
-    email = sortedEmails[0].email
+    email = emails[0]
 
     const queryString = `
     mutation upsert_Github {
