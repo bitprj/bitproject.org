@@ -99,6 +99,9 @@ export default NextAuth({
     },
     async jwt(token, user, account, profile, isNewUser) { 
       const isUserSignedIn = user ? true : false;
+      if (account?.accessToken) {
+        token.accessToken = account.accessToken
+      }
       await dataUpdate(token.name, token.accessToken)
       if(isUserSignedIn) {
         token.id = user.id.toString();
