@@ -34,7 +34,7 @@ export default function Cabin({ menu }) {
 
 
 export async function getServerSideProps(context) {
-  const token = "7f0b9f5d1573dfae4a05b8589f1d9905d0f7d0eb";
+  const token = process.env.GITHUB_TOKEN;
 
   const authLink = setContext((_, { headers }) => {
     return {
