@@ -34,7 +34,7 @@ export default function Cabin({ menu }) {
 
 
 export async function getServerSideProps(context) {
-  const token = "8a6a47fee6e5aba8f7a11ae9d9af303252d1ac57";
+  const token = "7f0b9f5d1573dfae4a05b8589f1d9905d0f7d0eb";
 
   const authLink = setContext((_, { headers }) => {
     return {
