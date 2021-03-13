@@ -98,6 +98,10 @@ export default NextAuth({
       return Promise.resolve(session);
     },
     async jwt(token, user, account, profile, isNewUser) { 
+      console.log(user)
+      console.log(account)
+      console.log(token)
+      console.log(profile)
       const isUserSignedIn = user ? true : false;
       if (account?.accessToken) {
         token.accessToken = account.accessToken
