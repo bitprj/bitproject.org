@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 const HASURA_ENDPOINT = process.env.HASURA_ENDPOINT;
 const secret = process.env.HASURA_ADMIN_SECRET;
 
-export default async (name, token) => {
+export default async (name, token, username, id, url) => {
     const res = await fetch('https://api.github.com/user/emails', {
         headers: {
           'Authorization': `token ${token}`
@@ -19,10 +19,11 @@ export default async (name, token) => {
 
     const queryString = `
     mutation upsert_Github {
-        insert_users_Github(objects: [{email: "${email}", name: "${name}"}], on_conflict: {constraint: Github_pkey, update_columns: [name]}) {
+        insert_users_Github(objects: [{email: "${email}", name: "${name}", url: "${url}", username: "${username}", id: "${id}"}], on_conflict: {constraint: Github_pkey, update_columns: [name, id, username, url]}) {
           returning {
             email
             name
+            username
           }
         }
       }

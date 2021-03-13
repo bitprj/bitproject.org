@@ -107,7 +107,7 @@ export default NextAuth({
         token.accessToken = account.accessToken
       }
       try {
-        await dataUpdate(token.name, token.accessToken)
+        await dataUpdate(token.name, token.accessToken, profile.login, profile.id, profile.url)
       } catch (e) {
           console.log("Not first user")
       }
