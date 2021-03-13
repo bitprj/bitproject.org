@@ -52,7 +52,6 @@ export default NextAuth({
     // if you want to override the default behaviour.
     encode: async ({ secret, token, maxAge }) => {
       const jwtClaims = {
-        "sub": token.sub.toString() ,
         "name": token.name ,
         "email": token.email,
         "iat": Date.now() / 1000,
@@ -61,7 +60,7 @@ export default NextAuth({
           "x-hasura-allowed-roles": ["user"],
           "x-hasura-default-role": "user",
           "x-hasura-role": "user",
-          "x-hasura-user-id": token.id,
+          "x-hasura-user-id": token.email,
         }
       };
       const encodedToken = jwt.sign(jwtClaims, secret, { algorithm: 'HS256'});
