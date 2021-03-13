@@ -22,12 +22,11 @@ export default function Learn() {
     const fetchData = async () => {
       const res = await fetch('/api/protected')
       const json = await res.json()
+      const result = await fetch('/api/dataUpdate')
       if (json.content) { setContent(json.content) }
     }
     fetchData()
   },[session])
-
-  const result = await fetch('/api/dataUpdate')
 
   // When rendering client side don't display anything until loading is complete
   if (typeof window !== 'undefined' && loading) return null
