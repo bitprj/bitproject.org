@@ -5,7 +5,7 @@ const HASURA_ENDPOINT = process.env.HASURA_ENDPOINT;
 const secret = process.env.HASURA_ADMIN_SECRET;
 
 
-export default async (req, res, queryString) => {
+export default async (req, res) => {
     const session = await getSession({ req })
     const queryString = `
     mutation upsert_Github {
