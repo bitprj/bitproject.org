@@ -60,7 +60,7 @@ export default NextAuth({
           "x-hasura-allowed-roles": ["user"],
           "x-hasura-default-role": "user",
           "x-hasura-role": "user",
-          "x-hasura-user-id": token.email,
+          "x-hasura-user-id": token.id,
         }
       };
       const encodedToken = jwt.sign(jwtClaims, secret, { algorithm: 'HS256'});
@@ -98,7 +98,7 @@ export default NextAuth({
     },
     async jwt(token, user, account, profile, isNewUser) { 
       const isUserSignedIn = user ? true : false;
-      await fetch('/api/dataUpdate')
+      await fetch('https://campdevnew-git-emily-bitproject.vercel.app/api/dataUpdate')
       if(isUserSignedIn) {
         token.id = user.id.toString();
       }
