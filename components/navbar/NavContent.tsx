@@ -54,6 +54,7 @@ const MobileNavContext = (props: FlexProps) => {
 }
 
 const DesktopNavContent = (props: FlexProps) => {
+  const [ session, loading ] = useSession()
   return (
     <Flex className="nav-content__desktop" align="center" justify="space-between" {...props}>
       <Box as="a" href="/" rel="home">
@@ -73,6 +74,7 @@ const DesktopNavContent = (props: FlexProps) => {
       </HStack>
       <HStack spacing="8" minW="240px" justify="space-between">
       <Spacer />
+      {!session && <>
         <Button as="a" href={`/api/auth/signin`}
                 onClick={(e) => {
                   e.preventDefault()
@@ -80,6 +82,20 @@ const DesktopNavContent = (props: FlexProps) => {
                 }} colorScheme="blue" fontWeight="bold">
           Login with Github
         </Button>
+      </>}
+      {session && <>
+        <span >
+              <small>Signed in as</small><br/>
+              <strong>{session.user.email || session.user.name}</strong>
+        </span>
+        <Button as="a" href={`/api/auth/signout`}
+                onClick={(e) => {
+                  e.preventDefault()
+                  signOut()
+                }} colorScheme="blue" fontWeight="bold">
+          Log off
+        </Button>
+      </>}
       </HStack>
     </Flex>
   )
