@@ -1,5 +1,6 @@
 import NextAuth from "next-auth"
 import Providers from "next-auth/providers"
+import { useSession } from 'next-auth/client'
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
@@ -49,7 +50,7 @@ export default NextAuth({
   // Callbacks are asynchronous functions you can use to control what happens
   // when an action is performed.
   // https://next-auth.js.org/configuration/callbacks
-//   callbacks: {
+  callbacks: {
 //     async jwt(token, user, account, profile, isNewUser) {
 //       // Add access_token to the token right after signin
 //       if (account?.accessToken) {
@@ -58,7 +59,15 @@ export default NextAuth({
 //       console.log(token)
 //       return token
 //     }
-//   },
+    // async redirect(url, baseUrl) {
+    //     if (session) {
+    //         var redirect = `baseurl${"/learn"}`
+    //     } else {
+    //         var redirect = baseUrl
+    //     }
+    //     return redirect
+    // },
+  },
 
   // Events are useful for logging
   // https://next-auth.js.org/configuration/events

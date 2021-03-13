@@ -27,6 +27,8 @@ export default function Learn() {
     fetchData()
   },[session])
 
+  const result = await fetch('/api/dataUpdate')
+
   // When rendering client side don't display anything until loading is complete
   if (typeof window !== 'undefined' && loading) return null
 
