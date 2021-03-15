@@ -52,8 +52,7 @@ import {
               company="President of Bit Project"
               image="/daniel.png"
             >
-              Sed sed risus pretium quam vulputate dignissim. Ornare quam viverra orci sagittis.
-              Integer vitae justo eget magna fermentum iaculis eu non diam
+              Doing bitcamp was an awesome experience that changed my life.
             </Testimonial>
 
             </Box>
