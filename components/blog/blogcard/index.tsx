@@ -25,7 +25,7 @@ import {
     }
   }
   
-  const Blog = (props: BlogProps) => {
+  export const BlogCard = (props: BlogProps) => {
     const { title, href, description, media, author, category } = props
     return (
       <LinkBox
@@ -50,7 +50,7 @@ import {
             >
               {category}
             </Text>
-            <Heading as="h3" size="sm" mb="2" lineHeight="base">
+            <Heading as="h2" size="md" mb="2" lineHeight="base">
               <LinkOverlay href={href}>{title}</LinkOverlay>
             </Heading>
             <Text noOfLines={2} mb="8" color={mode('gray.600', 'gray.400')}>
@@ -77,46 +77,3 @@ import {
       </LinkBox>
     )
   }
-  
-  export const BlogCard = () => {
-    return (
-      <Box as="section" bg={mode('gray.50', 'gray.800')} py={{ base: '10', sm: '24' }}>
-        <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>
-          <Heading size="xl" mb="8" fontWeight="extrabold">
-            Featured Articles
-          </Heading>
-          <SimpleGrid columns={{ base: 1, md: 3 }} spacing="12" mb="10">
-            <Blog
-              category="Fashion"
-              media="https://images.unsplash.com/photo-1505944270255-72b8c68c6a70?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFjaWFsfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-              title="7 Steps to Get Professional Facial Results At Home"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
-              href="#"
-              author={{ name: 'Segun Adebayo', href: '#' }}
-            />
-            <Blog
-              category="Valentine"
-              media="https://images.unsplash.com/photo-1516401266446-6432a8a07d41?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzR8fHZhbGVudGluZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-              title="The Best Excuses To Spend A Cozy Valentine’s Day In"
-              description="As much as I love an over-the-top, romantic Valentine’s date, part of me is looking"
-              href="#"
-              author={{ name: 'Segun Adebayo', href: '#' }}
-            />
-            <Blog
-              category="My Style"
-              media="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8c2hvcHBpbmd8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-              title="Top 5 Best-Sellers, Most-Loved & Favorite Buys of 2020"
-              description="HAAAAPPY 2021! It’s the first Monday of the year and I have never been so ready for"
-              href="#"
-              author={{ name: 'Segun Adebayo', href: '#' }}
-            />
-          </SimpleGrid>
-          <Link fontSize="xl" fontWeight="bold" color={mode('blue.600', 'blue.400')}>
-            <span>View all articles</span>
-            <Box as={BsArrowRight} display="inline-block" ms="2" />
-          </Link>
-        </Box>
-      </Box>
-    )
-  }
-  
