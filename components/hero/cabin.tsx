@@ -22,7 +22,7 @@ import {
             mb="20"
           >
             <Box flex="1" maxW={{ lg: 'xl' }} pt="10">
-              <Heading as="h1" size="3xl" mt="8" fontWeight="extrabold">
+              <Heading as="h1" size="2xl" mt="8" fontWeight="extrabold">
                 Song Recommendation Bot with Azure Functions
               </Heading>
               <Text color={mode('gray.600', 'gray.400')} mt="5" fontSize="xl">
@@ -43,9 +43,9 @@ import {
             </Box>
             <Img
               pos="relative"
-              marginEnd="-20rem"
-              w="56rem"
-              src="https://user-images.githubusercontent.com/10321085/110902644-1489c300-82bb-11eb-883e-66a6b42b59f6.png"
+              marginEnd="-5rem"
+              w="40rem"
+              src="https://cdn.dribbble.com/users/1358460/screenshots/14313986/media/cf14d4ef432f3a05078df0ac1d1e7387.jpg?compress=1&resize=1200x900"
               alt="Screening talent"
             />
           </Stack>
