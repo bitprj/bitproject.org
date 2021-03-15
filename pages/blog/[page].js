@@ -2,9 +2,8 @@ import hydrate from 'next-mdx-remote/hydrate';
 import renderToString from 'next-mdx-remote/render-to-string';
 import { getSanityContent } from '@utils/sanity';
 import Layout from '@components/layout'
-import { Header } from '@components/blog/header'
 
-export default function Page({ title, content, mainImage, category }) {
+export default function Page({ title, content }) {
 const renderedContent = hydrate(content, {
     components: {
       Layout,
@@ -13,10 +12,7 @@ const renderedContent = hydrate(content, {
 
   return (
     <Layout>
-      <Header 
-        title={title}
-        image={mainImage}
-      />
+      <h1>{title}</h1>
       {renderedContent}
     </Layout>
   );
@@ -28,11 +24,6 @@ export async function getStaticProps({ params }) {
       query PageBySlug($slug: String!) {
         allPost(where: { slug: { current: { eq: $slug } } }) {
           title
-          mainImage {
-            asset{
-              url
-            }
-          }
           content
         }
       }
@@ -51,8 +42,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       title: pageData.title,
-      mainImage: pageData.mainImage.asset.url,
-      content,
+      content
     },
   };
 }
