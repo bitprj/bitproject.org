@@ -11,7 +11,7 @@ import {
   useColorModeValue as mode,
 } from '@chakra-ui/react'
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
+import Layout, { siteTitle } from '../../components/layout'
 import { Featured } from '@components/blog/featured'
 import { BlogCard } from '@components/blog/blogcard'
 import { getSanityContent } from '@utils/sanity';
@@ -74,7 +74,7 @@ export async function getStaticProps() {
           slug{
             current
           } 
-          bodyRaw
+          content
           author {
             name
             image {
@@ -92,7 +92,7 @@ export async function getStaticProps() {
     title: post.title,
     slug: post.slug.current,
     mainImage: post.mainImage.asset.url,
-    body: post.bodyRaw,
+    body: post.content,
     authorName: post.author.name,
     authorPic: post.author.image.asset.url
   }));
