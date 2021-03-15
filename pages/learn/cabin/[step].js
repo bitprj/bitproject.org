@@ -10,7 +10,7 @@ import ReactMarkdown from 'react-markdown'
 import { Box, Circle, Flex, Stack, useColorModeValue as mode } from '@chakra-ui/react'
 import { yaml } from 'js-yaml'
 
-export default function Cabin({ config }) {
+export default function Step() {
   console.log(config)
 
   return (
@@ -35,8 +35,10 @@ export default function Cabin({ config }) {
 
 
 
-export async function getServerSideProps(context) {
-  const token = process.env.GITHUB_TOKEN;
+
+
+export async function getStaticPaths() {
+      const token = process.env.GITHUB_TOKEN;
 
   const authLink = setContext((_, { headers }) => {
     return {
@@ -49,52 +51,38 @@ export async function getServerSideProps(context) {
 
   const client = new ApolloClient({
     link: authLink.concat(new HttpLink({ uri: 'https://api.github.com/graphql' })),
-    cache: new InMemoryCache()
+    cache: new InMemoryCache({
+        typePolicies: {
+          QueryRoot: { // AppQuery for @dernster
+            queryType: true,
+          },
+          MutationRoot: { // Mutation by default
+            mutationType: true,
+          },
+        },
+      })
   });
 
-  const { data } = await client.query({
-    query: gql`
-        query {
-          repository(owner: "bitprj", name: "cabin") {
-            object(expression: "main:.bit/config.yml") {
-              ...on Blob {
-                text
+    const data = await client.query({
+        query: gql`
+            query {
+              repository(owner: "bitprj", name: "cabin") {
+                object(expression: "main:.bit/responses") {
+                    ... on Tree {
+                        entries {
+                            name
+                        }
+                    }
+                }
               }
-            }
-          }
-        }
-        
-    `
-  });
-    let configyml ="";
-    try {
-      let fileContents = Buffer.from(data.repository.object.text, 'base64').toString()
-      configyml = yaml.load(fileContents);
-    } catch (e) {
-      console.log("ERROR: " + e);
-    }
-    console.log(configyml)
-
-  return {
-    props: {
-      config: configyml.title
-    }, // will be passed to the page component as props
+            }   
+        `,
+    });
+  
+    console.log(data)
+  
+    return {
+      paths: data.repository.object.entries.map((p) => `/learn/cabin/${data.repository.object.entries.oid}`),
+      fallback: false,
+    };
   }
-}
-
-
-// object(expression: "main:.bit/responses") {
-//   ... on Tree {
-//     entries {
-//       oid
-//       name
-//       type
-//       object {
-//         ... on Blob {
-//           text
-//         }
-//       }
-//     }
-//   }
-// },
-
