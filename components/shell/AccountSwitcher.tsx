@@ -16,7 +16,7 @@ import {
 import * as React from 'react'
 import { HiSelector } from 'react-icons/hi'
 
-const AccountSwitcherButton = (props: FlexProps) => {
+const AccountSwitcherButton = ({currentCabin}, props: FlexProps) => {
   const buttonProps = useMenuButton(props)
   return (
     <Flex
@@ -48,7 +48,7 @@ const AccountSwitcherButton = (props: FlexProps) => {
         />
         <Box textAlign="start">
           <Box  fontWeight="semibold">
-            Building AI Spotify Recommender
+            {currentCabin}
           </Box>
         </Box>
       </HStack>
@@ -59,17 +59,18 @@ const AccountSwitcherButton = (props: FlexProps) => {
   )
 }
 
-export const AccountSwitcher = () => {
+export const AccountSwitcher = ( { currentCabin } ) => {
   return (
     <Menu>
-      <AccountSwitcherButton />
+      <AccountSwitcherButton 
+      currentCabin = {currentCabin}/>
       <MenuList shadow="lg" py="4" color="gray.600" px="3">
         <Text fontWeight="medium" mb="2">
           @lazyplatypus
         </Text>
         <MenuOptionGroup defaultValue="chakra-ui">
           <MenuItemOption value="chakra-ui" fontWeight="semibold" rounded="md">
-            Building AI Spotify Recommender
+            {currentCabin}
           </MenuItemOption>
           <MenuItemOption value="careerlyft" fontWeight="semibold" rounded="md">
             Building Slack Apps

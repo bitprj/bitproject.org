@@ -8,17 +8,19 @@ import { HttpLink } from 'apollo-link-http';
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
 import ReactMarkdown from 'react-markdown'
 import { Box, Circle, Flex, Stack, useColorModeValue as mode } from '@chakra-ui/react'
-import { yaml } from 'js-yaml'
+import yaml from 'js-yaml'
 
-export default function Cabin({ config }) {
-  console.log(config)
+export default function Cabin({ title }) {
+  console.log(title)
 
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <Shell>
+      <Shell
+      currentCabin={title}
+      >
         <StepHead />
         <Box p="8">
         {/* <ReactMarkdown
@@ -66,22 +68,16 @@ export async function getServerSideProps(context) {
         
     `
   });
-    let configyml ="";
-    try {
-      let fileContents = Buffer.from(data.repository.object.text, 'base64').toString()
-      configyml = yaml.load(fileContents);
-    } catch (e) {
-      console.log("ERROR: " + e);
-    }
-    console.log(configyml)
+
+  
+    const configyml = yaml.load(data.repository.object.text)
 
   return {
     props: {
-      config: configyml.title
+      title: configyml.title
     }, // will be passed to the page component as props
   }
 }
-
 
 // object(expression: "main:.bit/responses") {
 //   ... on Tree {
