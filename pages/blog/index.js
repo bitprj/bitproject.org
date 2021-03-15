@@ -40,7 +40,7 @@ export default function blog({ posts }) {
               media={mainImage}
               title={title}
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
-              href="#"
+              href={slug}
               author={{ name: "Daniel", href: '#' }}
             />
             ))}
@@ -88,9 +88,11 @@ export async function getStaticProps() {
     `,
   });
 
+
+
   const posts = data.allPost.map((post) => ({
     title: post.title,
-    slug: post.slug.current,
+    slug:  `/blog/${post.slug.current}`,
     mainImage: post.mainImage.asset.url,
     body: post.content,
     authorName: post.author.name,
