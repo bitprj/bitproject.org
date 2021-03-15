@@ -14,7 +14,7 @@ import {
 
   export function Header({ title, description, image, author, category }) {
     return (
-      <Box as="section" bg={mode('gray.50', 'gray.800')} pt="16" pb="24">
+      <Box as="section" bg={mode('gray.800','gray.200')} pt="16" pb="24">
         <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>
           <Stack
             direction={{ base: 'column', lg: 'row' }}
@@ -28,7 +28,7 @@ import {
                 size="xs"
                 textTransform="uppercase"
                 fontWeight="semibold"
-                color={mode('blue.600', 'blue.300')}
+                color={mode( 'blue.300','blue.600')}
                 letterSpacing="wide"
               >
                 {category}
@@ -36,14 +36,14 @@ import {
               <Heading
                 as="h1"
                 size="2xl"
-                color={mode('blue.600', 'blue.300')}
+                color={mode('blue.300','blue.600')}
                 mt="4"
                 fontWeight="extrabold"
                 letterSpacing="tight"
               >
                 {title}
               </Heading>
-              <Text color={mode('gray.600', 'gray.400')} mt="4" mb="4" fontSize="lg" fontWeight="medium">
+              <Text color={mode('gray.400', 'gray.600')} mt="4" mb="4" fontSize="lg" fontWeight="medium">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua.
               </Text>
@@ -72,7 +72,7 @@ import {
                 h="100%"
                 top="-4"
                 left="-4"
-                bg={mode('gray.200', 'gray.700')}
+                bg={mode('gray.700', 'gray.200')}
               />
             </Box>
 

@@ -26,8 +26,8 @@ import {
         shadow="sm"
         py={{ base: '6', md: '12' }}
         px={{ base: '6', md: '14' }}
-        bg={mode('white', 'gray.900')}
-        color={mode('gray.800', 'gray.300')}
+        bg={mode('gray.700','white')}
+        color={mode('gray.300','gray.800')}
         {...rest}
       >
         <Box fontSize={{ base: 'md', md: 'lg' }} flex="1">
