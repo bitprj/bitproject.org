@@ -51,38 +51,27 @@ export async function getStaticPaths() {
 
   const client = new ApolloClient({
     link: authLink.concat(new HttpLink({ uri: 'https://api.github.com/graphql' })),
-    cache: new InMemoryCache({
-        typePolicies: {
-          QueryRoot: { // AppQuery for @dernster
-            queryType: true,
-          },
-          MutationRoot: { // Mutation by default
-            mutationType: true,
-          },
-        },
-      })
+    cache: new InMemoryCache()
   });
 
     const data = await client.query({
         query: gql`
-            query {
-              repository(owner: "bitprj", name: "cabin") {
-                object(expression: "main:.bit/responses") {
-                    ... on Tree {
-                        entries {
-                            name
-                        }
-                    }
-                }
+        query {
+          repository(owner: "bitprj", name: "cabin") {
+            object(expression: "main:.bit/config.yml") {
+              ...on Blob {
+                oid
               }
-            }   
-        `,
+            }
+          }
+        }
+    `
     });
-  
-    console.log(data)
-  
+    const pages = data.repository.object;
+    console.log(pages)
+
     return {
-      paths: data.repository.object.entries.map((p) => `/learn/cabin/${data.repository.object.entries.oid}`),
-      fallback: false,
+        paths: pages.map((p) => `/learn/cabin/${p.oid}`),
+        fallback: false,
     };
   }

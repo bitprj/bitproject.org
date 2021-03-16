@@ -69,7 +69,7 @@ export async function getServerSideProps(context) {
     `
   });
 
-  
+    console.log(data.repository.object)
     const configyml = yaml.load(data.repository.object.text)
 
   return {
