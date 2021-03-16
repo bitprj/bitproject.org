@@ -11,7 +11,7 @@ import {
   useColorModeValue as mode,
 } from '@chakra-ui/react'
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
+import Layout, { siteTitle } from '../../components/layout'
 import { Featured } from '@components/blog/featured'
 import { BlogCard } from '@components/blog/blogcard'
 import { getSanityContent } from '@utils/sanity';
@@ -34,13 +34,13 @@ export default function blog({ posts }) {
       
       <Box as="section" bg={mode('white.50', 'gray.800')} py={{ base: '10', sm: '24' }}>
         <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>
-          <SimpleGrid columns={{ base: 1, md: 3 }} spacing="12" mb="10">
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacing="12" mb="10">
           {posts.map(({ title, slug, mainImage, authorName, authorPic }) => (
             <BlogCard
               media={mainImage}
               title={title}
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
-              href="#"
+              href={slug}
               author={{ name: "Daniel", href: '#' }}
             />
             ))}
@@ -74,7 +74,7 @@ export async function getStaticProps() {
           slug{
             current
           } 
-          bodyRaw
+          content
           author {
             name
             image {
@@ -88,11 +88,13 @@ export async function getStaticProps() {
     `,
   });
 
+
+
   const posts = data.allPost.map((post) => ({
     title: post.title,
-    slug: post.slug.current,
+    slug:  `/blog/${post.slug.current}`,
     mainImage: post.mainImage.asset.url,
-    body: post.bodyRaw,
+    body: post.content,
     authorName: post.author.name,
     authorPic: post.author.image.asset.url
   }));

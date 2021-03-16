@@ -8,19 +8,17 @@ import { HttpLink } from 'apollo-link-http';
 import ChakraUIRenderer from 'chakra-ui-markdown-renderer';
 import ReactMarkdown from 'react-markdown'
 import { Box, Circle, Flex, Stack, useColorModeValue as mode } from '@chakra-ui/react'
-import yaml from 'js-yaml'
+import { yaml } from 'js-yaml'
 
-export default function Cabin({ title }) {
-  console.log(title)
+export default function Step() {
+  console.log(config)
 
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <Shell
-      currentCabin={title}
-      >
+      <Shell>
         <StepHead />
         <Box p="8">
         {/* <ReactMarkdown
@@ -37,8 +35,10 @@ export default function Cabin({ title }) {
 
 
 
-export async function getServerSideProps(context) {
-  const token = process.env.GITHUB_TOKEN;
+
+
+export async function getStaticPaths() {
+      const token = process.env.GITHUB_TOKEN;
 
   const authLink = setContext((_, { headers }) => {
     return {
@@ -54,43 +54,24 @@ export async function getServerSideProps(context) {
     cache: new InMemoryCache()
   });
 
-  const { data } = await client.query({
-    query: gql`
+    const data = await client.query({
+        query: gql`
         query {
           repository(owner: "bitprj", name: "cabin") {
             object(expression: "main:.bit/config.yml") {
               ...on Blob {
-                text
+                oid
               }
             }
           }
         }
-        
     `
-  });
+    });
+    const pages = data.repository.object;
+    console.log(pages)
 
-    console.log(data.repository.object)
-    const configyml = yaml.load(data.repository.object.text)
-
-  return {
-    props: {
-      title: configyml.title
-    }, // will be passed to the page component as props
+    return {
+        paths: pages.map((p) => `/learn/cabin/${p.oid}`),
+        fallback: false,
+    };
   }
-}
-
-// object(expression: "main:.bit/responses") {
-//   ... on Tree {
-//     entries {
-//       oid
-//       name
-//       type
-//       object {
-//         ... on Blob {
-//           text
-//         }
-//       }
-//     }
-//   }
-// },
-
