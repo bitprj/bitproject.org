@@ -14,35 +14,35 @@ export interface Link {
 }
 
 export const links: Link[] = [
-  { label: 'Showcase', href: '/blog' },
   {
-    label: 'Resources',
+    label: 'Get Involved',
     children: [
       {
-        label: 'Get Help',
+        label: 'For Students',
         description: 'Read our documentation and FAQs, or get in touch.',
         href: '#',
         icon: <IoHelpBuoy />,
       },
       {
-        label: 'Events & Meetups',
+        label: 'Volunteer',
         description: 'Discover and join your local Sketch community.',
         href: '#',
         icon: <IoCalendar />,
       },
       {
-        label: 'Extensions',
+        label: 'Partner',
         description: 'Do even more with Assistants, plugins and integrations.',
         href: '#',
         icon: <IoGrid />,
       },
       {
-        label: 'Blog',
+        label: 'Join Bit Project',
         description: 'Get updates, articles and insights from the team.',
         href: '#',
         icon: <MdWeb />,
       },
     ],
   },
-  { label: 'Enterprise', href: '#' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Camp', href: '#' },
 ]

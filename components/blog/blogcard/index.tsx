@@ -50,28 +50,12 @@ import {
             >
               {category}
             </Text>
-            <Heading as="h2" size="md" mb="2" lineHeight="base">
+            <Heading as="h2" size="lg" mb="2" lineHeight="base">
               <LinkOverlay href={href}>{title}</LinkOverlay>
             </Heading>
             <Text noOfLines={2} mb="8" color={mode('gray.600', 'gray.400')}>
               {description}
             </Text>
-            <Flex
-              align="baseline"
-              justify="space-between"
-              fontSize="sm"
-              color={mode('gray.600', 'gray.400')}
-            >
-              <Text>
-                By{' '}
-                <Box as="a" textDecor="underline" href={author.href}>
-                  {author.name}
-                </Box>
-              </Text>
-              <Link href="#">
-                <Box as={BsClockFill} display="inline-block" me="2" opacity={0.4} />3 min read
-              </Link>
-            </Flex>
           </Flex>
         </Flex>
       </LinkBox>

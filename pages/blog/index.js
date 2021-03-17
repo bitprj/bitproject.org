@@ -12,8 +12,8 @@ import {
 } from '@chakra-ui/react'
 import Head from 'next/head'
 import Layout, { siteTitle } from '../../components/layout'
-import { Featured } from '@components/blog/featured'
 import { BlogCard } from '@components/blog/blogcard'
+import { Header } from '@components/blog/header'
 import { getSanityContent } from '@utils/sanity';
 import { BsArrowRight, BsClockFill } from 'react-icons/bs'
 
@@ -24,18 +24,15 @@ export default function blog({ posts }) {
       <Head>
         <title>{posts.title}</title>
       </Head>
-      <Featured 
-            title="Beau built an IoT heartrate monitor with Azure Functions"
-            description="this is testing"
-            media="https://upload.wikimedia.org/wikipedia/commons/8/87/Downtown_Davis1_2008.JPG"
-            author="Daniel kim"
-            category="Food"
+      <Header 
+        title={posts[0].title}
+        image={posts[0].mainImage}
       />
       
       <Box as="section" bg={mode('white.50', 'gray.800')} py={{ base: '10', sm: '24' }}>
         <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing="12" mb="10">
-          {posts.map(({ title, slug, mainImage, authorName, authorPic }) => (
+          {posts.slice(1).map(({ title, slug, mainImage, authorName, authorPic }) => (
             <BlogCard
               media={mainImage}
               title={title}
