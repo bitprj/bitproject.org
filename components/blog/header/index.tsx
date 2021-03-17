@@ -12,8 +12,9 @@ import {
   import { HiPlay } from 'react-icons/hi'
   import  { Testimonial } from '@components/blog/testimonial'
 
-  export function Header({ title, description, image, author, category }) {
+  export function Header({ title, description, image, author, category, slug}) {
     return (
+      <Link href={slug}>
       <Box as="section" bg={mode('gray.800','gray.200')} pt="16" pb="24">
         <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>
           <Stack
@@ -79,6 +80,7 @@ import {
           </Stack>
         </Box>
       </Box>
+      </Link>
     )
   }
   

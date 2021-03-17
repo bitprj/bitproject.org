@@ -27,6 +27,7 @@ export default function blog({ posts }) {
       <Header 
         title={posts[0].title}
         image={posts[0].mainImage}
+        slug={posts[0].slug}
       />
       
       <Box as="section" bg={mode('white.50', 'gray.800')} py={{ base: '10', sm: '24' }}>
