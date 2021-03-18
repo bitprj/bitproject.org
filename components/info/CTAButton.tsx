@@ -7,7 +7,7 @@ export const CTAButton = (props: HTMLChakraProps<'button'>) => {
   return (
     <Center
       minW="240px"
-      as="button"
+      as="button" 
       px="6"
       py="4"
       textTransform="uppercase"
