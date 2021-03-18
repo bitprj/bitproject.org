@@ -3,7 +3,7 @@ import * as React from 'react'
 import { BiRightArrowAlt } from 'react-icons/bi'
 
 export const CTAButton = (props: HTMLChakraProps<'button'>) => {
-  const { children, ...rest } = props as BoxProps
+  const { children, ...rest } = props as unknown as BoxProps
   return (
     <Center
       minW="240px"
