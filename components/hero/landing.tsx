@@ -19,8 +19,8 @@ import {
   export const Landing = () => {
     return (
       <Box>
-        <Box as="section" bg="gray.800" color="white" pt="7.5rem">
-          <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>
+        <Box as="section" bg="gray.800" color="white" pt="7.5rem" bgImage="url('/stars.svg')" >
+          <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }} bg="gray.800">
             <Box textAlign="center">
               <Heading
                 as="h1"
@@ -33,7 +33,7 @@ import {
               >
                 We equip students with technical superpowers
               </Heading>
-              <Text fontSize="xl" mt="4" maxW="xl" mx="auto">
+              <Text fontSize="xl" mt="4" maxW="xl" mx="auto" >
                 We provide cutting-edge, open source learning experiences to prepare students for careers in tech.
               </Text>
             </Box>

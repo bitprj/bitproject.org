@@ -44,7 +44,7 @@ import {
               >
                 {title}
               </Heading>
-              <Text color={mode('gray.400', 'gray.600')} mt={{base: "4", lg: "12"}} mb="12" fontSize="lg" fontWeight="medium">
+              <Text color={mode('gray.400', 'gray.600')} mt={{base: "4", lg: "12"}} mb="12" fontSize="2xl" fontWeight="medium">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua.
               </Text>

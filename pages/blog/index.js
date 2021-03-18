@@ -42,6 +42,7 @@ export default function blog({ posts }) {
               author={{ name: "Daniel", href: '#' }}
             />
             ))}
+
           </SimpleGrid>
           <Link fontSize="xl" fontWeight="bold" color={mode('blue.600', 'blue.400')}>
             <span>View all articles</span>
