@@ -5,6 +5,7 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import { Navbar } from '@components/navbar'
 import { Footer } from '@components/footer'
+import { Alert } from '@components/alert'
 
 const name = '[Your Name]'
 export const siteTitle = 'Next.js Sample Website'
@@ -12,6 +13,7 @@ export const siteTitle = 'Next.js Sample Website'
 export default function Layout({ children, home }) {
   return (
     <div>
+      <Alert />
       <Navbar style={{zIndex: '100'}}  />
       <Head>
         <link rel="icon" href="/favicon.ico" />
