@@ -7,6 +7,6 @@ export default function Students() {
       <Head>
         <title>camp.dev</title>
       </Head>
-    </Layout>
+    </Layout> 
   )
 }
