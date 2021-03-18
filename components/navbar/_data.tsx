@@ -19,30 +19,30 @@ export const links: Link[] = [
     children: [
       {
         label: 'For Students',
-        description: 'Read our documentation and FAQs, or get in touch.',
+        description: 'Launch your first idea, with help from us.',
         href: '#',
         icon: <IoHelpBuoy />,
       },
       {
         label: 'Volunteer',
-        description: 'Discover and join your local Sketch community.',
+        description: 'Come help shape the next generation of tech leaders.',
         href: '#',
         icon: <IoCalendar />,
       },
       {
         label: 'Partner',
-        description: 'Do even more with Assistants, plugins and integrations.',
+        description: 'Partner with us to help change the world',
         href: '#',
         icon: <IoGrid />,
       },
       {
         label: 'Join Bit Project',
-        description: 'Get updates, articles and insights from the team.',
+        description: 'Join the team making tech accessible',
         href: '#',
         icon: <MdWeb />,
       },
     ],
   },
   { label: 'Blog', href: '/blog' },
-  { label: 'Camp', href: '#' },
+  { label: 'Camp', href: '/camp' },
 ]

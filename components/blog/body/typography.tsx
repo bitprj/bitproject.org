@@ -37,7 +37,7 @@ export const H6 = ({ children }) => (
 );
 
 export const P = ({ children }) => (
-  <Text as="p" fontSize="xl">
+  <Text as="p" fontSize="2xl" >
     {children}
   </Text>
 );
