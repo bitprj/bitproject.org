@@ -10,7 +10,6 @@ export default function Students() {
         <title>camp.dev</title>
       </Head>
       <Info />
-      <Landing />
     </Layout>
   )
 }

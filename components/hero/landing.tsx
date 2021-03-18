@@ -111,19 +111,22 @@ import {
   
         <Box as="section" pt={{ base: '40', md: '64' }} pb="24">
           <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>
+          <Heading as="h2" size="2xl" fontWeight="extrabold" letterSpacing="tight" textAlign="center">
+          We give students the tools they need to <br></br> launch their future in tech
+        </Heading>
           <SimpleGrid py="16" columns={{ base: 1, lg: 2 }} spacing={{ base: '16', lg: '32' }}>
 
           <Testimonial
-            name="Jane Cooper"
-            role="Marketing Manager @ Freeko.com"
+            name="Beau Hayes Pollard"
+            role="High School, '22"
             image="https://images.unsplash.com/photo-1571175351749-e8d06f275d85?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTk0fHxsYWR5JTIwc21pbGluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua.
           </Testimonial>
           <Testimonial
-            name="Matt Godin"
-            role="Engineering Manager @ Freezone"
+            name="Shreya Gupta"
+            role="Computer Science @ UC Davis '21"
             image="https://images.unsplash.com/photo-1603987248955-9c142c5ae89b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fGhhbmRzb21lJTIwbWFuJTIwc21pbGluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
           >
             Accumsan tortor posuere ac ut consequat semper. Turpis cursus in hac habitasse platea.
