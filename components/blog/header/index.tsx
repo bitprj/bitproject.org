@@ -6,6 +6,7 @@ import {
     Link,
     Stack,
     Text,
+    SlideFade,
     useColorModeValue as mode,
   } from '@chakra-ui/react'
   import * as React from 'react'
@@ -16,6 +17,7 @@ import {
     return (
       <Link href={slug}>
       <Box as="section" bg={mode('gray.800','gray.200')} pt="16" pb="24">
+      <SlideFade in>
         <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>
           <Stack
             direction={{ base: 'column', lg: 'row' }}
@@ -79,6 +81,8 @@ import {
 
           </Stack>
         </Box>
+        </SlideFade>
+
       </Box>
       </Link>
     )

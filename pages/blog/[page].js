@@ -4,7 +4,7 @@ import { getSanityContent } from '@utils/sanity';
 import Layout from '@components/layout'
 import { Header } from '@components/blog/header'
 import components from '@components/blog/body'
-import {Box} from '@chakra-ui/react'
+import {Box, SlideFade} from '@chakra-ui/react'
 export default function Page({ title, content, mainImage, category }) {
 const renderedContent = hydrate(content, {components});
 
@@ -15,9 +15,11 @@ const renderedContent = hydrate(content, {components});
         image={mainImage}
       />
       <Box as="section" pt="16" pb="24">
+      <SlideFade in>
       <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>
       {renderedContent}
       </Box>
+      </SlideFade>
       </Box>
     </Layout>
   );

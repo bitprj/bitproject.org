@@ -5,6 +5,7 @@ import {
   SimpleGrid,
   Stack,
   Text,
+  DarkMode,
   useColorModeValue as mode,
 } from '@chakra-ui/react'
 import * as React from 'react'
@@ -15,8 +16,11 @@ import { links, socialLinks } from './_data'
 import { LinkGroup } from './LinkGroup'
 import { SubscribeForm } from './SubscribeForm'
 
+
+
 export const Footer = () => (
-  <Box as="footer" bg={mode('gray.50', 'gray.800')}>
+  <DarkMode>
+  <Box as="footer" bg='gray.800' color="white">
     <Box
       maxW={{ base: 'xl', md: '7xl' }}
       mx="auto"
@@ -75,7 +79,7 @@ export const Footer = () => (
           justify={{ base: 'space-between', lg: 'flex-start' }}
           align={{ base: 'flex-start', md: 'center' }}
         >
-          <Logo iconColor={mode('blue.500', 'blue.300')} h="6" />
+          <Logo iconColor='blue.300' h="6" />
           <HStack spacing="2" mt={{ lg: '8' }} as="ul" listStyleType="none">
             {socialLinks.map((link, idx) => (
               <Box as="li" key={idx}>
@@ -96,13 +100,14 @@ export const Footer = () => (
       </Flex>
     </Box>
   </Box>
+  </DarkMode>
 )
 
 const Heart = () => (
   <Box
     display="inline-block"
     mx="1"
-    color={mode('blue.500', 'blue.300')}
+    color='blue.300'
     fontSize="xs"
     role="img"
     aria-label="Love"

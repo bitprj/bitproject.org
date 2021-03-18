@@ -12,8 +12,8 @@ export const SocialLink = (props: HTMLChakraProps<'a'>) => (
     justifyContent="center"
     transition="all 0.2s"
     _hover={{
-      bg: useColorModeValue('gray.100', 'whiteAlpha.100'),
-      color: useColorModeValue('blue.500', 'blue.300'),
+      bg: 'whiteAlpha.100',
+      color: 'blue.300',
     }}
     {...props}
   />

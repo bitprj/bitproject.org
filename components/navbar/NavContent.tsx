@@ -80,7 +80,7 @@ const DesktopNavContent = (props: FlexProps) => {
                   e.preventDefault()
                   signIn()
                 }} colorScheme="blue" fontWeight="bold">
-          Login with Github
+          Get Updates
         </Button>
       </>}
       {session && <>

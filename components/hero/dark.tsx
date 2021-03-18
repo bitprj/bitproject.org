@@ -31,7 +31,7 @@ import {
                 lineHeight="1.2"
                 letterSpacing="tight"
               >
-                Ship your first app, with help
+                Code your first app,<br></br> with help
               </Heading>
               <Text fontSize="xl" mt="4" maxW="xl" mx="auto">
                 Knowing where to start with your first project is hard. 
