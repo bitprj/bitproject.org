@@ -16,11 +16,6 @@ console.log(quote)
         title={title}
         image={mainImage}
         quote={quote}
-        description={description}
-        authorName={authorName}
-        authorPic={authorPic}
-        authorName={authorName}
-        authorPosition={authorPosition}
       />
       <Box as="section" pt="16" pb="24">
       <SlideFade in>
@@ -37,7 +32,7 @@ export async function getStaticProps({ params }) {
   const data = await getSanityContent({
     query: `
       query PageBySlug($slug: String!) {
-        allPost(where: { slug: { current: { eq: $slug } } }) {
+        allCourse(where: { slug: { current: { eq: $slug } } }) {
           title
           description
           quote
@@ -46,31 +41,26 @@ export async function getStaticProps({ params }) {
               url
             }
           }
-          content
-          author {
-            name
-            image {
-              asset {
-                url
-              }
-            }
-            position
+          description
+          weeks {
+                  Name
+                  content
           }
         }
       }
     `,
     variables: {
-      slug: params.page,
+      slug: params.course,
     },
   });
+  console.log(data)
+  const [pageData] = data.allCourse;
 
-  const [pageData] = data.allPost;
-
-  const content = await renderToString(pageData.content, {
+  const content = await renderToString(pageData.weeks.content, {
     components: { Layout },
   });
 
-  
+  console.log(content)
   return {
     props: {
       title: pageData.title,
@@ -78,9 +68,6 @@ export async function getStaticProps({ params }) {
       content,
       quote: pageData.quote,
       description: pageData.description,
-      authorName: pageData.author.name,
-      authorPic: pageData.author.image.asset.url,
-      authorPosition: pageData.author.position,
     },
   };
 }
@@ -88,8 +75,8 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const data = await getSanityContent({
     query: `
-      query AllPages {
-        allPost {
+      query allCourses {
+        allCourse {
           slug {
             current
           }
@@ -98,10 +85,10 @@ export async function getStaticPaths() {
     `,
   });
 
-  const pages = data.allPost;
+  const pages = data.allCourse;
 
   return {
-    paths: pages.map((p) => `/blog/${p.slug.current}`),
+    paths: pages.map((p) => `/course/${p.slug.current}`),
     fallback: false,
   };
 }

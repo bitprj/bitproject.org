@@ -1,6 +1,6 @@
 export default {
-  name: 'post',
-  title: 'Post',
+  name: 'course',
+  title: 'Course',
   type: 'document',
   fields: [
     {
@@ -26,12 +26,6 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
-    },
-    {
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
@@ -40,26 +34,22 @@ export default {
       },
     },
     {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
-    },
-    {
       name: 'quote',
       title: 'Quote',
       type: 'text',
       validation: Rule => Rule.required(),
     },
     {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-    },
-    {
-      name: 'content',
-      title: 'Content',
-      type: 'markdown',
+      name: 'weeks',
+      title: 'Weeks',
+      type: 'array',
+      of: [
+        {
+          name: 'week',
+          title: 'Week name',
+          type: 'week',
+        }
+      ]
     },
   ],
 
