@@ -28,6 +28,8 @@ export default function blog({ posts }) {
         title={posts[0].title}
         image={posts[0].mainImage}
         slug={posts[0].slug}
+        quote={posts[0].quote}
+        description={posts[0].description}
       />
       
       <Box as="section" bg={mode('white.50', 'gray.800')} py={{ base: '10', sm: '24' }}>
@@ -62,6 +64,8 @@ export async function getStaticProps() {
       query AllPosts {
         allPost {
           title
+          description
+          quote
           categories {
             title
           }
@@ -95,7 +99,9 @@ export async function getStaticProps() {
     mainImage: post.mainImage.asset.url,
     body: post.content,
     authorName: post.author.name,
-    authorPic: post.author.image.asset.url
+    authorPic: post.author.image.asset.url,
+    quote: post.quote,
+    description: post.description,
   }));
 
   return {

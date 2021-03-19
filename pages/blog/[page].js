@@ -5,14 +5,18 @@ import Layout from '@components/layout'
 import { Header } from '@components/blog/header'
 import components from '@components/blog/body'
 import {Box, SlideFade} from '@chakra-ui/react'
-export default function Page({ title, content, mainImage, category }) {
+export default function Page({ title, content, mainImage, category, quote, description }) {
 const renderedContent = hydrate(content, {components});
+console.log(description)
+console.log(quote)
 
   return (
     <Layout>
       <Header 
         title={title}
         image={mainImage}
+        quote={quote}
+        description={description}
       />
       <Box as="section" pt="16" pb="24">
       <SlideFade in>
@@ -31,6 +35,8 @@ export async function getStaticProps({ params }) {
       query PageBySlug($slug: String!) {
         allPost(where: { slug: { current: { eq: $slug } } }) {
           title
+          description
+          quote
           mainImage {
             asset{
               url
@@ -56,6 +62,8 @@ export async function getStaticProps({ params }) {
       title: pageData.title,
       mainImage: pageData.mainImage.asset.url,
       content,
+      quote: pageData.quote,
+      description: pageData.description,
     },
   };
 }

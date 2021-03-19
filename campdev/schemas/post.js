@@ -7,6 +7,13 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'slug',
@@ -16,6 +23,7 @@ export default {
         source: 'title',
         maxLength: 96,
       },
+      validation: Rule => Rule.required(),
     },
     {
       name: 'author',
@@ -36,6 +44,12 @@ export default {
       title: 'Categories',
       type: 'array',
       of: [{type: 'reference', to: {type: 'category'}}],
+    },
+    {
+      name: 'quote',
+      title: 'Quote',
+      type: 'text',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'publishedAt',
