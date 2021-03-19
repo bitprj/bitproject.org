@@ -5,7 +5,7 @@ import Layout from '@components/layout'
 import { Header } from '@components/blog/header'
 import components from '@components/blog/body'
 import {Box, SlideFade} from '@chakra-ui/react'
-export default function Page({ title, content, mainImage, category, quote, description }) {
+export default function Page({ title, content, mainImage, category, quote, description, authorName, authorPic, authorPosition }) {
 const renderedContent = hydrate(content, {components});
 console.log(description)
 console.log(quote)
@@ -17,6 +17,10 @@ console.log(quote)
         image={mainImage}
         quote={quote}
         description={description}
+        authorName={authorName}
+        authorPic={authorPic}
+        authorName={authorName}
+        authorPosition={authorPosition}
       />
       <Box as="section" pt="16" pb="24">
       <SlideFade in>
@@ -43,6 +47,15 @@ export async function getStaticProps({ params }) {
             }
           }
           content
+          author {
+            name
+            image {
+              asset {
+                url
+              }
+            }
+            position
+          }
         }
       }
     `,
@@ -57,6 +70,7 @@ export async function getStaticProps({ params }) {
     components: { Layout },
   });
 
+  
   return {
     props: {
       title: pageData.title,
@@ -64,6 +78,9 @@ export async function getStaticProps({ params }) {
       content,
       quote: pageData.quote,
       description: pageData.description,
+      authorName: pageData.author.name,
+      authorPic: pageData.author.image.asset.url,
+      authorPosition: pageData.author.position,
     },
   };
 }

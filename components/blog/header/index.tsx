@@ -13,7 +13,7 @@ import {
   import { HiPlay } from 'react-icons/hi'
   import  { Testimonial } from '@components/blog/testimonial'
 
-  export function Header({ title, description, image, author, category, slug, quote}) {
+  export function Header({ title, description, image, authorName, authorPic, category, slug, quote}) {
     return (
       <Link href={slug}>
       <Box as="section" bg={mode('gray.800','gray.200')} pt="16" pb="24">
@@ -50,9 +50,9 @@ import {
                 {description}
               </Text>
               <Testimonial
-              name="Daniel Kim"
+              name={authorName}
               company="President of Bit Project"
-              image="/daniel.png"
+              image={authorPic}
             >
               {quote}
             </Testimonial>

@@ -30,6 +30,9 @@ export default function blog({ posts }) {
         slug={posts[0].slug}
         quote={posts[0].quote}
         description={posts[0].description}
+        authorName={posts[0].authorName}
+        authorPic={posts[0].authorPic}
+        authorPosition={posts[0].authorPosition}
       />
       
       <Box as="section" bg={mode('white.50', 'gray.800')} py={{ base: '10', sm: '24' }}>
@@ -85,6 +88,7 @@ export async function getStaticProps() {
                 url
               }
             }
+            position
           }
         }
       }
@@ -100,6 +104,7 @@ export async function getStaticProps() {
     body: post.content,
     authorName: post.author.name,
     authorPic: post.author.image.asset.url,
+    authorPosition: post.author.position,
     quote: post.quote,
     description: post.description,
   }));
