@@ -83,7 +83,7 @@ import {
               <Center>
               <Img
                 alt="Screenshot of Envelope App"
-                src="/frame.svg"
+                src="/becks.svg"
               />
               </Center>
             </Box>
