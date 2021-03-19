@@ -1,10 +1,8 @@
 import Head from 'next/head'
 import Layout from '../components/layout'
-import Link from 'next/link'
-import Date from '../components/date'
 import { Hero } from '@components/hero'
-import { Landing } from '@components/hero/landing'
-import { Newsletter } from '@components/newsletter'
+import { Dark } from '@components/hero/dark'
+import { Partner } from '@components/hero/partner'
 
 export default function Home() {
   return (
@@ -12,8 +10,7 @@ export default function Home() {
       <Head>
         <title>camp.dev</title>
       </Head>
-      <Landing />
-      <Newsletter />
+      <Partner />
     </Layout>
   )
 }
