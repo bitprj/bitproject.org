@@ -11,7 +11,17 @@ export default {
     {
       title: 'Content',
       name: 'content',
-      type: 'markdown'
-    } 
+      type: 'text'
+    }, 
+    {
+      title: 'weekNumber',
+      name: 'weeknumber',
+      type: 'number'
+    }, 
+    {
+      title: 'githubLink',
+      name: 'githublink',
+      type: 'url'
+    }, 
   ]
 }

@@ -1,26 +1,36 @@
-import hydrate from 'next-mdx-remote/hydrate';
-import renderToString from 'next-mdx-remote/render-to-string';
 import { getSanityContent } from '@utils/sanity';
 import Layout from '@components/layout'
 import { Header } from '@components/blog/header'
-import components from '@components/blog/body'
-import {Box, SlideFade} from '@chakra-ui/react'
-export default function Page({ title, content, mainImage, category, quote, description, authorName, authorPic, authorPosition }) {
-const renderedContent = hydrate(content, {components});
-console.log(description)
-console.log(quote)
+import { Card } from '@components/course/card'
+
+import {Box, SlideFade, SimpleGrid} from '@chakra-ui/react'
+export default function Page({ title, content, mainImage, quote, description, weeks }) {
+console.log(weeks)
 
   return (
     <Layout>
       <Header 
         title={title}
         image={mainImage}
-        quote={quote}
+        description={quote}
       />
       <Box as="section" pt="16" pb="24">
       <SlideFade in>
       <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>
-      {renderedContent}
+      
+      <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto">
+                <SimpleGrid columns={{ base:1, md:2, lg:3}} gap="6"> 
+                  {weeks.map((p) => (
+                      <Card
+                        Name={p.Name}
+                        Text={p.content}
+                        Link={p.githublink}
+                        Week={p.weeknumber}
+                      />
+                  ))}
+                </SimpleGrid>
+       </Box>
+
       </Box>
       </SlideFade>
       </Box>
@@ -45,6 +55,8 @@ export async function getStaticProps({ params }) {
           weeks {
                   Name
                   content
+                  githublink
+                  weeknumber
           }
         }
       }
@@ -53,21 +65,23 @@ export async function getStaticProps({ params }) {
       slug: params.course,
     },
   });
-  console.log(data)
   const [pageData] = data.allCourse;
 
-  const content = await renderToString(pageData.weeks.content, {
-    components: { Layout },
-  });
+ 
+  const weeks = pageData.weeks.map((week) => ({
+    Name: week.Name,
+    content: week.content,
+    weeknumber: week.weeknumber,
+    githublink: week.githublink,
+  }));
 
-  console.log(content)
   return {
     props: {
       title: pageData.title,
       mainImage: pageData.mainImage.asset.url,
-      content,
       quote: pageData.quote,
       description: pageData.description,
+      weeks
     },
   };
 }

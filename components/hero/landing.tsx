@@ -16,7 +16,7 @@ import {
   import { FaPlay } from 'react-icons/fa'
   import { Testimonial } from '@components/testimonial'
 
-  export const Landing = () => {
+  export const Landing = ({ heading, description,cta1, cta2, image, play }) => {
     return (
       <Box>
         <Box as="section" bg="gray.800" color="white" pt="7.5rem" bgImage="url('/stars.svg')" >
@@ -31,10 +31,10 @@ import {
                 lineHeight="1.2"
                 letterSpacing="tight"
               >
-                We equip students with technical superpowers
+                {heading}
               </Heading>
               <Text fontSize="xl" mt="4" maxW="xl" mx="auto" >
-                We provide cutting-edge, open source learning experiences to prepare students for careers in tech.
+                {description}
               </Text>
             </Box>
   
@@ -55,7 +55,7 @@ import {
                   fontWeight="bold"
                   fontSize="md"
                 >
-                  Get started with Github
+                  {cta1}
                 </Button>
                 <Button
                   as="a"
@@ -66,7 +66,7 @@ import {
                   fontWeight="bold"
                   fontSize="md"
                 >
-                  Create a Cabin
+                  {cta2}
                 </Button>
               </LightMode>
             </Stack>
@@ -82,10 +82,11 @@ import {
               <Center>
               <Img
                 alt="Screenshot of Envelope App"
-                src="/livecode.png"
+                src={image}
                 width="80%"
               />
               </Center>
+              {play == 0 &&
               <Circle
                 size="20"
                 as="button"
@@ -105,6 +106,7 @@ import {
                 <VisuallyHidden>Play demo video</VisuallyHidden>
                 <FaPlay />
               </Circle>
+              }
             </Box>
           </Box>
         </Box>

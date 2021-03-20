@@ -12,7 +12,13 @@ export default function Home() {
       <Head>
         <title>camp.dev</title>
       </Head>
-      <Landing />
+      <Landing
+        heading="We equip students with technical superpowers"
+        description="We provide cutting-edge, open source learning experiences to prepare students for careers in tech."
+        cta1="Apply Now"
+        cta2="Get Updates"
+        image="/livecode.png"
+      />
       <Newsletter />
     </Layout>
   )

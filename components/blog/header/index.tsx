@@ -49,6 +49,7 @@ import {
               <Text color={mode('gray.400', 'gray.600')} mt={{base: "4", lg: "12"}} mb="12" fontSize="2xl" fontWeight="medium">
                 {description}
               </Text>
+              {quote &&
               <Testimonial
               name={authorName}
               company="President of Bit Project"
@@ -56,6 +57,7 @@ import {
             >
               {quote}
             </Testimonial>
+            }
 
             </Box>
             <Box pos="relative" w={{ base: 'full', lg: '560px' }} h={{ base: 'auto', lg: '560px' }}>

@@ -51,6 +51,20 @@ export default {
         }
       ]
     },
+    {
+      title: 'Blogs',
+      name: 'blogs',
+      type: 'array',
+      of: [{
+          type: 'reference', 
+          to: [
+            {type: 'post'},
+          ] 
+        }
+    
+      ],
+    }
+      
   ],
 
   preview: {
