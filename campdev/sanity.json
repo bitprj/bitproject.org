@@ -13,7 +13,9 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "markdown"
+    "markdown",
+    "vercel-deploy",
+    "@sanity/dashboard"
   ],
   "env": {
     "development": {
