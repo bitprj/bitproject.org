@@ -2,10 +2,12 @@ import { getSanityContent } from '@utils/sanity';
 import Layout from '@components/layout'
 import { Header } from '@components/blog/header'
 import { Card } from '@components/course/card'
+import { BlogCard } from '@components/blog/blogcard'
+import { BsArrowRight, BsClockFill } from 'react-icons/bs'
 
-import {Box, SlideFade, SimpleGrid} from '@chakra-ui/react'
-export default function Page({ title, content, mainImage, quote, description, weeks }) {
-console.log(weeks)
+import {Link,Box, SlideFade, SimpleGrid} from '@chakra-ui/react'
+export default function Page({ title, content, mainImage, quote, description, weeks, blogs }) {
+console.log(blogs)
 
   return (
     <Layout>
@@ -14,11 +16,11 @@ console.log(weeks)
         image={mainImage}
         description={quote}
       />
-      <Box as="section" pt="16" pb="24">
+      <Box as="section" pt="16" >
       <SlideFade in>
       <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>
       
-      <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto">
+      <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" mb="24">
                 <SimpleGrid columns={{ base:1, md:2, lg:3}} gap="6"> 
                   {weeks.map((p) => (
                       <Card
@@ -32,6 +34,27 @@ console.log(weeks)
        </Box>
 
       </Box>
+
+      <Box as="section" bg="gray.50" py={{ base: '10', sm: '24' }}>
+        <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacing="12" mb="10">
+          {blogs.map(({ Title, Slug, Image, Description }) => (
+            <BlogCard
+              media={Image}
+              title={Title}
+              description={Description}
+              href={Slug}
+            />
+            ))}
+
+          </SimpleGrid>
+          <Link fontSize="xl" fontWeight="bold" color='blue.600'>
+            <span>View all articles</span>
+            <Box as={BsArrowRight} display="inline-block" ms="2" />
+          </Link>
+        </Box>
+      </Box>
+
       </SlideFade>
       </Box>
     </Layout>
@@ -58,6 +81,18 @@ export async function getStaticProps({ params }) {
                   githublink
                   weeknumber
           }
+          blogs {
+            slug {
+              current
+            }
+            title
+            description
+            mainImage{
+              asset{
+                url
+              }
+            }
+          }
         }
       }
     `,
@@ -75,13 +110,21 @@ export async function getStaticProps({ params }) {
     githublink: week.githublink,
   }));
 
+  const blogs = pageData.blogs.map((blog) => ({
+    Title: blog.title,
+    Image: blog.mainImage.asset.url,
+    Description: blog.description,
+    Slug: blog.slug.current
+
+  }));
   return {
     props: {
       title: pageData.title,
       mainImage: pageData.mainImage.asset.url,
       quote: pageData.quote,
       description: pageData.description,
-      weeks
+      weeks,
+      blogs
     },
   };
 }
