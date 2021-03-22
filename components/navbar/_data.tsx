@@ -49,13 +49,13 @@ export const links: Link[] = [
       {
         label: 'Serverless',
         description: 'Come help shape the next generation of tech leaders.',
-        href: '/volunteer',
+        href: '/course/building-with-serverless-functions',
         icon: <FcElectricity />,
       },
       {
         label: 'Data Science',
         description: 'Partner with us to help change the world',
-        href: '/partner',
+        href: '/data-science',
         icon: <FcStatistics />,
       },
     ],
