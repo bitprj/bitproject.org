@@ -45,7 +45,7 @@ export default function Page({ title, content, mainImage, quote, description, we
               media={Image}
               title={Title}
               description={Description}
-              href={Slug}
+              href={`/blog/${Slug}`}
             />
             ))}
 
