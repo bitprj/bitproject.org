@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { IoCalendar, IoGrid, IoHelpBuoy } from 'react-icons/io5'
-import { FcTwoSmartphones,FcGraduationCap,FcStatistics,FcElectricity,FcConferenceCall,FcCollaboration } from 'react-icons/fc'
+import { FcTwoSmartphones,FcGraduationCap,FcStatistics,FcAreaChart,FcElectricity,FcConferenceCall,FcCollaboration } from 'react-icons/fc'
 
 export interface Link {
   label: string
@@ -57,6 +57,12 @@ export const links: Link[] = [
         description: 'Partner with us to help change the world',
         href: '/data-science',
         icon: <FcStatistics />,
+      },
+      {
+        label: 'DevOps School',
+        description: 'Learn about the exciting field of DevOps',
+        href: '/devops',
+        icon: <FcAreaChart />,
       },
     ],
   },
