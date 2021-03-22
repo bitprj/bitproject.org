@@ -3,11 +3,11 @@ import Layout from '@components/layout'
 import { Header } from '@components/blog/header'
 import { Card } from '@components/course/card'
 import { BlogCard } from '@components/blog/blogcard'
+import { Course } from '@components/course/course'
 import { BsArrowRight, BsClockFill } from 'react-icons/bs'
-
 import {Link,Box, SlideFade, SimpleGrid} from '@chakra-ui/react'
+
 export default function Page({ title, content, mainImage, quote, description, weeks, blogs }) {
-console.log(blogs)
 
   return (
     <Layout>
@@ -15,7 +15,9 @@ console.log(blogs)
         title={title}
         image={mainImage}
         description={quote}
+        calltoAction="Apply"
       />
+      <Course />
       <Box as="section" pt="16" >
       <SlideFade in>
       <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>

@@ -13,7 +13,7 @@ import {
   import { HiPlay } from 'react-icons/hi'
   import  { Testimonial } from '@components/blog/testimonial'
 
-  export function Header({ title, description, image, authorName, authorPic, category, slug, quote}) {
+  export function Header({ title, description, image, authorName, authorPic, category, slug, quote, calltoAction}) {
     return (
       <Link href={slug}>
       <Box as="section" bg={mode('gray.800','gray.200')} pt="16" pb="24">
@@ -58,7 +58,20 @@ import {
               {quote}
             </Testimonial>
             }
-
+            {calltoAction &&
+            <Button
+                mt="8"
+                minW="14rem"
+                colorScheme="blue"
+                size="lg"
+                height="14"
+                px="8"
+                fontSize="md"
+                fontWeight="bold"
+              >
+                {calltoAction}
+              </Button>
+            }
             </Box>
             <Box pos="relative" w={{ base: 'full', lg: '560px' }} h={{ base: 'auto', lg: '560px' }}>
               <Img
