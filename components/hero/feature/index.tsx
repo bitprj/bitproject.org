@@ -9,7 +9,7 @@ import {
   } from '@chakra-ui/react'
   import * as React from 'react'
   import { FaCopy, FaPlug, FaRecycle } from 'react-icons/fa'
-  import { SingleFeature } from './Feature'
+  import { SingleFeature } from './feature'
   
   export const Feature = ({Headline, Features}) => {
     return (
