@@ -5,6 +5,7 @@ import Date from '../components/date'
 import { Hero } from '@components/hero'
 import { Landing } from '@components/hero/landing'
 import { Newsletter } from '@components/newsletter'
+import { TestimonialTwo } from '@components/testimonial/two'
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         cta2="Get Updates"
         image="/livecode.png"
       />
+      <TestimonialTwo />
       <Newsletter />
     </Layout>
   )
