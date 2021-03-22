@@ -34,16 +34,18 @@ export const Newsletter = () => {
           </Text>
           <Box mt="6">
             <form
-              onSubmit={(e) => {
-                e.preventDefault()
-                // your subscribe logic here
-              }}
+              action="https://buttondown.email/api/emails/embed-subscribe/bitrate"
+              method="post"
+              target="popupwindow"
             >
               <Stack>
                 <Input
                   aria-label="Enter your email"
                   placeholder="Enter your email to join"
                   rounded="base"
+                  type="email" 
+                  name="email" 
+                  id="bd-email"
                 />
                 <Button
                   type="submit"
