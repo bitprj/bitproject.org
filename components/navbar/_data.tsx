@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { IoCalendar, IoGrid, IoHelpBuoy } from 'react-icons/io5'
-import { MdWeb } from 'react-icons/md'
+import { FcTwoSmartphones,FcGraduationCap,FcStatistics,FcElectricity,FcConferenceCall,FcCollaboration } from 'react-icons/fc'
 
 export interface Link {
   label: string
@@ -21,28 +21,45 @@ export const links: Link[] = [
         label: 'For Students',
         description: 'Launch your first idea, with help from us.',
         href: '/students',
-        icon: <IoHelpBuoy />,
+        icon: <FcGraduationCap />,
       },
       {
         label: 'Volunteer',
         description: 'Come help shape the next generation of tech leaders.',
         href: '/volunteer',
-        icon: <IoCalendar />,
+        icon: <FcCollaboration />,
       },
       {
         label: 'Partner',
         description: 'Partner with us to help change the world',
         href: '/partner',
-        icon: <IoGrid />,
+        icon: <FcTwoSmartphones />,
       },
       {
         label: 'Join Bit Project',
         description: 'Join the team making tech accessible',
         href: '/join',
-        icon: <MdWeb />,
+        icon: <FcConferenceCall />,
       },
     ],
   },
-  { label: 'Blog', href: '/blog' },
+  {
+    label: 'Courses',
+    children: [
+      {
+        label: 'Serverless',
+        description: 'Come help shape the next generation of tech leaders.',
+        href: '/volunteer',
+        icon: <FcElectricity />,
+      },
+      {
+        label: 'Data Science',
+        description: 'Partner with us to help change the world',
+        href: '/partner',
+        icon: <FcStatistics />,
+      },
+    ],
+  },
   { label: 'Camp', href: '/camp' },
+  { label: 'Blog', href: '/blog' },
 ]
