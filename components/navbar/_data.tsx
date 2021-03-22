@@ -61,7 +61,7 @@ export const links: Link[] = [
       {
         label: 'DevOps School',
         description: 'Learn about the exciting field of DevOps',
-        href: '/devops',
+        href: '/course/devops',
         icon: <FcAreaChart />,
       },
     ],
