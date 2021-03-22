@@ -17,7 +17,9 @@ export default function Page({ title, content, mainImage, quote, description, we
         description={quote}
         calltoAction="Apply"
       />
-      <Course />
+      <Course 
+      Description={description}
+      />
       <Box as="section" pt="16" >
       <SlideFade in>
       <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>
