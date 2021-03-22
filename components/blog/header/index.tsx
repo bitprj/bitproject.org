@@ -83,14 +83,7 @@ import {
                 src={image}
                 alt="Screening talent"
               />
-              <Box
-                pos="absolute"
-                w="100%"
-                h="100%"
-                top="-4"
-                left="-4"
-                bg={mode('gray.700', 'gray.200')}
-              />
+             
             </Box>
 
           </Stack>
