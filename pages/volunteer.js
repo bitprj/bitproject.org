@@ -25,8 +25,6 @@ export default function Volunteer() {
       }
     ]
 
-  console.log(features)
-
   return (
     <Layout home>
       <Head>
