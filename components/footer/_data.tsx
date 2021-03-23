@@ -13,52 +13,36 @@ export interface LinkGroupData {
 
 export const links: LinkGroupData[] = [
   {
-    title: 'Product',
+    title: 'Get Involved',
     links: [
-      { label: 'How it works', href: '#' },
-      { label: 'Features', href: '#' },
+      { label: 'For Students', href: '/students',
+        badge: (
+        <Badge colorScheme="blue" variant="solid" fontSize="0.625rem">
+          Apply
+        </Badge>
+      ),},
+      { label: 'Partner', href: '/partner' },
       {
-        label: 'Integrations',
-        href: '#',
+        label: 'Volunteer',
+        href: '/volunteer',
         badge: (
           <Badge colorScheme="blue" variant="solid" fontSize="0.625rem">
-            New
+            Apply
           </Badge>
         ),
       },
-      { label: 'Pricing', href: '#' },
-      { label: 'Examples', href: '#' },
+      { label: 'Join', href: '/join' },
     ],
   },
   {
-    title: 'Resources',
+    title: 'Courses',
     links: [
-      { label: 'Learn Center', href: '#' },
-      { label: 'Support', href: '#' },
-      { label: 'Slack Community', href: '#' },
-      { label: 'Events', href: '#' },
-      { label: 'Terms of Service', href: '#' },
-      { label: 'Privacy Policy', href: '#' },
+      { label: 'Serverless', href: '/courses/building-with-serverless-functions' },
+      { label: 'DevOps School', href: '/courses/devops' },
+      { label: 'Data Science', href: '/courses/datascience' },
     ],
   },
-  {
-    title: 'About',
-    links: [
-      { label: 'Our Story', href: '#' },
-      { label: 'Media Kit', href: '#' },
-      { label: 'Blog', href: '#' },
-      { label: 'Email us', href: '#' },
-    ],
-  },
-  {
-    title: 'Get Started',
-    links: [
-      { label: 'Start for free', href: '#' },
-      { label: 'Sign in', href: '#' },
-      { label: 'Download MacOS', href: '#' },
-      { label: 'Download Windows', href: '#' },
-    ],
-  },
+
 ]
 
 interface SocialLink {
