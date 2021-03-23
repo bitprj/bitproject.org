@@ -32,7 +32,7 @@ export default function blog({ posts }) {
         description={posts[0].description}
         authorName={posts[0].authorName}
         authorPic={posts[0].authorPic}
-        authorPosition={posts[0].authorPosition}
+        authorRole={posts[0].authorPosition}
       />
       
       <Box as="section" bg={mode('white.50', 'gray.800')} py={{ base: '10', sm: '24' }}>

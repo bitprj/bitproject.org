@@ -20,7 +20,7 @@ console.log(quote)
         authorName={authorName}
         authorPic={authorPic}
         authorName={authorName}
-        authorPosition={authorPosition}
+        authorRole={authorPosition}
       />
       <Box as="section" pt="16" pb="24">
       <SlideFade in>
