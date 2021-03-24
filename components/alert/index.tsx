@@ -10,6 +10,7 @@ export const Alert = () => (
       color="white"
       py="3"
       px={{ base: '3', md: '6', lg: '8' }}
+      as="a" href="/course/serverless" 
     >
       <HStack spacing="3">
         <Stack
@@ -23,11 +24,10 @@ export const Alert = () => (
             <b>Free, Mentored Bootcamp </b> to launch your first app
             with Azure Functions
           </Text>
-          <CallToActionLink as="a" href="/course/serverless" textAlign="center" width={{ base: 'full', sm: 'auto' }} >
+          <CallToActionLink textAlign="center" width={{ base: 'full', sm: 'auto' }} >
             Apply Now
           </CallToActionLink>
         </Stack>
-        <CloseButton alignSelf={{ base: 'self-start', sm: 'initial' }} aria-label="Close banner" />
       </HStack>
     </Box>
   </Box>
