@@ -4,7 +4,7 @@ import * as React from 'react'
 export const CallToActionLink = (props: BoxProps) => (
   <Box
     as="a"
-    href="#"
+    href="/course/serverless"
     py="1"
     px="4"
     bg="white"

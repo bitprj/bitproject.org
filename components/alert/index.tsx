@@ -1,7 +1,6 @@
 import { Box, HStack, Stack, Text } from '@chakra-ui/react'
 import * as React from 'react'
 import { CallToActionLink } from './CallToActionLink'
-import { CloseButton } from './CloseButton'
 
 export const Alert = () => (
   <Box as="section" pt="0" pb="0">
@@ -10,7 +9,6 @@ export const Alert = () => (
       color="white"
       py="3"
       px={{ base: '3', md: '6', lg: '8' }}
-      as="a" href="/course/serverless" 
     >
       <HStack spacing="3">
         <Stack
