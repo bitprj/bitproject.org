@@ -31,6 +31,8 @@ export default function Students() {
         cta1="Apply Now"
         cta2="Get Updates"
         image="/becks.svg"
+        cta1link="https://apply.bitproject.org"
+        cta2link="#"
       />
       <TestimonialTwo
         Name1="Serena Buxton"
@@ -45,7 +47,7 @@ export default function Students() {
       <Feature
       Headline="Learn how to code like an engineer - by building"
       features={features}
-      Image="/daniel.png"
+      Image="/codeperson.jpg"
       />
     </Layout> 
   )

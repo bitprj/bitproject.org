@@ -23,7 +23,7 @@ export const Alert = () => (
             <b>Free, Mentored Bootcamp </b> to launch your first app
             with Azure Functions
           </Text>
-          <CallToActionLink textAlign="center" width={{ base: 'full', sm: 'auto' }}>
+          <CallToActionLink as="a" href="/course/serverless" textAlign="center" width={{ base: 'full', sm: 'auto' }} >
             Apply Now
           </CallToActionLink>
         </Stack>

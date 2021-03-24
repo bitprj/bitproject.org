@@ -36,6 +36,8 @@ export default function Home() {
         cta1="Apply Now"
         cta2="Get Updates"
         image="/livecode.png"
+        cta1link="/course/serverless"
+        cta2link="#"
       />
       <TestimonialTwo
         Name1="Serena Buxton"

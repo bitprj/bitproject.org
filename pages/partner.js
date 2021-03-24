@@ -32,6 +32,8 @@ export default function Partner() {
         cta1="Work with Us"
         cta2="Case Studies"
         image="/becks.svg"
+        cta1link="mailto:info@bitproject.org"
+        cta2link="/blog"
       />
       <TestimonialTwo
         Name1="Serena Buxton"
@@ -44,9 +46,9 @@ export default function Partner() {
         Quote2="Mentoring through Bit project has been a blast! Seeing the students work on projects from ideation to implementation has been super exciting."
       />
       <Feature
-      Headline="Learn how to code like an engineer - by building"
+      Headline="Work with us to make cutting edge tech accessible "
       features={features}
-      Image="/daniel.png"
+      Image="/codeperson2.jpg"
       />
     </Layout>
   )

@@ -16,7 +16,7 @@ import {
   import { FaPlay } from 'react-icons/fa'
   import { Testimonial } from '@components/testimonial'
 
-  export const Landing = ({ heading, description,cta1, cta2, image, play }) => {
+  export const Landing = ({ heading, description,cta1, cta2, image, play, cta1link, cta2link }) => {
     return (
       <Box>
         <Box as="section" bg="gray.800" color="white" pt="7.5rem" bgImage="url('/stars.svg')" >
@@ -48,7 +48,7 @@ import {
               <LightMode>
                 <Button
                   as="a"
-                  href="#"
+                  href={cta1link}
                   size="lg"
                   colorScheme="blue"
                   px="8"
@@ -59,7 +59,7 @@ import {
                 </Button>
                 <Button
                   as="a"
-                  href="#"
+                  href={cta2link}
                   size="lg"
                   colorScheme="whiteAlpha"
                   px="8"
