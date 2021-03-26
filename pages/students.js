@@ -27,7 +27,7 @@ export default function Students() {
   return (
     <Layout home>
       <Head>
-        <title>camp.dev</title>
+        <title>Bit Project</title>
       </Head>
       <Landing
         heading="Launch your ideas with Code"

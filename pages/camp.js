@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Layout home>
       <Head>
-        <title>camp.dev</title>
+        <title>Bit Project</title>
       </Head>
       <Dark />
       <Hero />

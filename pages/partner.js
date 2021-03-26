@@ -24,7 +24,7 @@ export default function Partner() {
   return (
     <Layout home>
       <Head>
-        <title>camp.dev</title>
+        <title>Bit Project</title>
       </Head>
       <Landing
         heading="Is your company excited to help make tech accessible?"
