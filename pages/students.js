@@ -8,16 +8,20 @@ export default function Students() {
   const features =
   [
     {
-      desc : 'Anyone with experience in the tech industry is welcome to apply. If you know the basics of software engineering and are passionate about sharing your knowledge and helping others, we want you! No previous mentorship experience required.',
-      title : 'Calling all engineers',
+      desc : 'Our programs are beginner-friendly and open to anyone, whether you are still a student or looking to make a career change into tech. All of our programs are funded by our amazing partners, so there is no cost for students.',
+      title : 'Everyone is Welcome',
     },
     {
-      desc : `Bit Project will provide a guide for each mentoring session to help keep meetings meaningful. For the first half of the program, these will focus on getting to know each other and discussing your interests and experiences in tech. In the second half, the focus will shift to students' final projects as you guide and work with them to build something awesome from scratch`,
-      title : 'Scoped Mentorship',
+      desc : `Our courses supplement traditional computer science programs with cutting-edge curriculum made in collaboration between student developers and top engineers. Learn about tools and technologies used across the industry.`,
+      title : 'Learn Relevant Skills',
     },
     {
-      desc : 'Our Camps range from 4 to 8 weeks. Mentors and students will be paired at the start of the program and are required to meet weekly throughout its duration. This is an opportunity to help people aspiring to get into tech and build meaningful relationships.',
-      title : 'Program Commitment',
+      desc : 'Build out your portfolio of personal projects & experiment with new technologies in our guided learning experiences. Walk away with real-world experience that you can put on your resume right away.',
+      title : 'Get experience building a project, from scratch',
+    },
+    {
+      desc : 'Students who are accepted into our mentorship program will be paired with engineers from the industry. Throughout the program, you will attend weekly 1:1 meetings in which your mentor will help guide you in building your final project and learning industry best practices. This is also a great opportunity to learn more about the industry and ask your mentor about their journey and experiences in tech.',
+      title : '1:1 Mentorship',
     }
   ]  
   return (
