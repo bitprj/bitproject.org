@@ -12,15 +12,15 @@ export default function Home() {
   const features =
   [
     {
-      desc : 'built for students, by students',
+      desc : 'We are a global student organization developing interactive, engaging technical content for you.',
       title : 'Built for students, by students',
     },
     {
-      desc : `ful. For the first half of the program, these will focus on getting to know each other and discussing your interests and experiences in tech. In the second half, the focus will shift to students' final projects as you guide and work with them to build something awesome from scratch`,
+      desc : 'Engineers mentor our students through pair programming sessions. They share insights on job search and engineering best practices.',
       title : 'Built with the Industry',
     },
     {
-      desc : 'Our Camps range from 4 to 8 weeks. Mentors and students will be paired at the start of the program and are required to meet weekly throughout its duration. This is an opportunity to help people aspiring to get into tech and build meaningful relationships.',
+      desc : 'Our courses are open source and free for all because we believe in the power of accessible technical education.',
       title : 'Free & Accessible',
     }
   ]
