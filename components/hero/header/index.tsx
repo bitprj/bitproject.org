@@ -13,9 +13,8 @@ import {
   import { HiPlay } from 'react-icons/hi'
   import  { Testimonial } from '@components/blog/testimonial'
 
-  export function Header({ title, description, image, authorName, authorPic, category, slug, quote, calltoAction, authorRole}) {
+  export function Header({ title, description, image, authorName, authorPic, category, slug, quote, calltoAction, authorRole, CTALink}) {
     return (
-      <Link href={slug}>
       <Box as="section" bg={mode('gray.800','gray.200')} pt="16" pb="24">
       <SlideFade in>
         <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>
@@ -60,8 +59,8 @@ import {
             }
             {calltoAction &&
             <Button
-                // as="a"
-                // href="https://google.com"
+                as="a"
+                href={CTALink}
                 mt="8"
                 minW="14rem"
                 colorScheme="blue"
@@ -93,7 +92,6 @@ import {
         </SlideFade>
 
       </Box>
-      </Link>
     )
   }
   

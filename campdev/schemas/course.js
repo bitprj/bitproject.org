@@ -63,9 +63,15 @@ export default {
         }
     
       ],
-    }
-      
+    },
+    {
+      name: 'cta',
+      title: 'CTA',
+      type: 'url',
+      validation: Rule => Rule.required(),
+    },
   ],
+  
 
   preview: {
     select: {

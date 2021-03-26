@@ -1,13 +1,13 @@
 import { getSanityContent } from '@utils/sanity';
 import Layout from '@components/layout'
-import { Header } from '@components/blog/header'
+import { Header } from '@components/hero/header'
 import { Card } from '@components/course/card'
 import { BlogCard } from '@components/blog/blogcard'
 import { Course } from '@components/course/course'
 import { BsArrowRight, BsClockFill } from 'react-icons/bs'
 import {Link,Box, SlideFade, SimpleGrid} from '@chakra-ui/react'
 
-export default function Page({ title, content, mainImage, quote, description, weeks, blogs }) {
+export default function Page({ title, content, mainImage, quote, description, weeks, blogs, cta}) {
 
   return (
     <Layout>
@@ -16,6 +16,7 @@ export default function Page({ title, content, mainImage, quote, description, we
         image={mainImage}
         description={quote}
         calltoAction="Apply"
+        CTALink={cta}
       />
       <Course 
       Description={description}
@@ -73,6 +74,7 @@ export async function getStaticProps({ params }) {
           title
           description
           quote
+          cta
           mainImage {
             asset{
               url
@@ -127,6 +129,7 @@ export async function getStaticProps({ params }) {
       mainImage: pageData.mainImage.asset.url,
       quote: pageData.quote,
       description: pageData.description,
+      cta: pageData.cta,
       weeks,
       blogs
     },
