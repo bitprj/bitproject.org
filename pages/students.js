@@ -33,10 +33,10 @@ export default function Students() {
         heading="Launch your ideas with Code"
         description="We provide cutting-edge, open source learning experiences to prepare students for careers in tech."
         cta1="Apply Now"
-        cta2="Get Updates"
+        cta2="Learn More"
         image="/becks.svg"
         cta1link="https://apply.bitproject.org"
-        cta2link="#"
+        cta2link="/serverless.pdf"
       />
       <TestimonialTwo
         Name1="Serena Buxton"

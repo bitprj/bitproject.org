@@ -36,6 +36,9 @@ export default function Volunteer() {
         cta1="Be a Mentor"
         cta2="Learn More"
         image="/becks.svg"
+        cta1link="https://info421626.typeform.com/to/T6YYDgAP"
+        cta2link="/serverless.pdf"
+        
       />
       <TestimonialTwo
         Name1="Serena Buxton"
@@ -50,7 +53,7 @@ export default function Volunteer() {
       <Feature
       Headline="Volunteer"
       features={features}
-      Image="/daniel.png"
+      Image="/unsplash.jpg"
       />
     </Layout>
   )
