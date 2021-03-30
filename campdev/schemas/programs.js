@@ -63,13 +63,8 @@ export default {
       type: 'array',
       of: [
         {
-          name: 'quote1',
-          title: 'Quote1',
-          type: 'quote',
-        },
-        {
-          name: 'quote2',
-          title: 'Quote2',
+          name: 'quote',
+          title: 'Quote',
           type: 'quote',
         }
       ]
