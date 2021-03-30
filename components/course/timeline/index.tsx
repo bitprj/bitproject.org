@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { AiOutlineBulb, AiOutlineSketch, AiOutlineGithub,AiOutlineVideoCamera } from 'react-icons/ai'
-import { Box, Icon } from '@chakra-ui/react'
+import { Box, Icon, Link } from '@chakra-ui/react'
 import { List } from './List'
 import { ListItem } from './ListItem'
 import { Placeholder } from './Placeholder'
@@ -10,12 +10,14 @@ export const Timeline = () => {
     <Box as="section">
       <Box maxW="2xl" mx="auto" p={{ base: '4', md: '8' }} >
         <List spacing="12">
-          <ListItem
-            title="Weekly Livestreams"
-            subTitle="Pair Programming Sessions with Industry Leaders"
-            icon={<Icon as={AiOutlineVideoCamera} boxSize="6" />}
-          >
-          </ListItem>
+          <Link href="https://twitch.tv/bitprojectorg">
+            <ListItem
+              title="Weekly Livestreams"
+              subTitle="Pair Programming Sessions with Industry Leaders"
+              icon={<Icon as={AiOutlineVideoCamera} boxSize="6" />}
+            >
+            </ListItem>
+          </Link>
           <ListItem
             title="Interactive Learning Experiences"
             subTitle="powered by Github"
