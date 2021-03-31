@@ -13,6 +13,7 @@ import course from './course'
 import week from './week'
 import programs from './programs'
 import quote from './quote'
+import event from './event'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -30,6 +31,7 @@ export default createSchema({
     week,
     programs,
     quote,
+    event,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

@@ -8,9 +8,28 @@ import { BsArrowRight, BsClockFill } from 'react-icons/bs'
 import {Link,Box, SlideFade, SimpleGrid} from '@chakra-ui/react'
 import {Landing} from '@components/hero/landing'
 import { TestimonialTwo } from '@components/testimonial/two'
+import { Feature } from '@components/hero/feature'
 
-export default function Page({ heading, description, image, cta1, cta2, cta1link, cta2link, quotes}) {
-
+export default function Page({ heading, description, image, cta1, cta2, cta1link, cta2link, quotes, events}) {
+  const sfdsfsdf =
+  [
+    {
+      desc : events[0].desc,
+      title : events[0].title,
+    },
+    {
+      desc : `Our courses supplement traditional computer science programs with cutting-edge curriculum made in collaboration between student developers and top engineers. Learn about tools and technologies used across the industry.`,
+      title : 'Learn Relevant Skills',
+    },
+    {
+      desc : 'Build out your portfolio of personal projects & experiment with new technologies in our guided learning experiences. Walk away with real-world experience that you can put on your resume right away.',
+      title : 'Get experience building a project, from scratch',
+    },
+    {
+      desc : 'Students who are accepted into our mentorship program will be paired with engineers from the industry. Throughout the program, you will attend weekly 1:1 meetings in which your mentor will help guide you in building your final project and learning industry best practices. This is also a great opportunity to learn more about the industry and ask your mentor about their journey and experiences in tech.',
+      title : '1:1 Mentorship',
+    }
+  ]
   return (
       <Layout>
         <Landing
@@ -33,6 +52,11 @@ export default function Page({ heading, description, image, cta1, cta2, cta1link
             Image2={quotes[1].image.asset.url}
             Quote2={quotes[1].words}
         />
+        <Feature
+          Heading="Upcoming Events"
+          features={events}
+          Image={image}
+          />
       </Layout>
       
   );
@@ -67,6 +91,16 @@ export async function getStaticProps({ params }) {
               }
               words
             }
+        events {
+            title
+            date
+            image {
+              asset {
+                url
+              }
+            }
+            desc
+          }
             }
         }
     `,
@@ -85,7 +119,8 @@ export async function getStaticProps({ params }) {
       cta1link: pageData.cta1link,
       cta2: pageData.cta2,
       cta2link: pageData.cta2link,
-        quotes: pageData.quotes,
+      quotes: pageData.quotes,
+      events: pageData.events,
     },
   };
 }
