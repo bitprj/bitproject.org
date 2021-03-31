@@ -8,7 +8,7 @@ export function Card({Name, Text, Week, Link}) {
         <Box p="6">
           <Box d="flex" alignItems="baseline">
             <Badge borderRadius="full" px="2" colorScheme="teal">
-              Week{Week}
+              Week {Week}
             </Badge>
             <Box
               color="gray.500"
@@ -18,7 +18,7 @@ export function Card({Name, Text, Week, Link}) {
               textTransform="uppercase"
               ml="2"
             >
-             {Name}
+             {Link}
             </Box>
           </Box>
   
@@ -31,13 +31,13 @@ export function Card({Name, Text, Week, Link}) {
           >
           </Box>
   
-          <Box fontSize="lg" fontWeight="bold">
-          {Name}
+          <Box fontSize="lg" mt="2" fontWeight="bold">
+            {Name}
           </Box>
   
           <Box d="flex" mt="2" alignItems="center">
             
-            <Box as="span" ml="2" color="gray.600">
+            <Box as="span" color="gray.600">
               {Text}
             </Box>
           </Box>
