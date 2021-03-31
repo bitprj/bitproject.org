@@ -23,6 +23,8 @@ import {
               <Stack spacing="12" maxW="lg">
               {features.map((f) => (
                 <SingleFeature icon={f.icon} title={f.title}>
+                  {f.date}
+                  <br></br>
                   {f.desc}
                 </SingleFeature>
               ))
