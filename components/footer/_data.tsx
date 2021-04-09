@@ -37,7 +37,7 @@ export const links: LinkGroupData[] = [
   {
     title: 'Courses',
     links: [
-      { label: 'Serverless', href: '/courses/building-with-serverless-functions' },
+      { label: 'Serverless', href: '/courses/serverless' },
       { label: 'DevOps School', href: '/courses/devops' },
       { label: 'Data Science', href: '/courses/datascience' },
     ],
