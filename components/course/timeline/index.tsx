@@ -10,23 +10,23 @@ export const Timeline = () => {
     <Box as="section">
       <Box maxW="2xl" mx="auto" p={{ base: '4', md: '8' }} >
         <List spacing="12">
-          <Link href="https://twitch.tv/bitprojectorg">
+          <Link href="https://apply.bitproject.org">
             <ListItem
-              title="Weekly Livestreams"
-              subTitle="Pair Programming Sessions with Industry Leaders"
+              title="April 30th Application Deadline"
+              subTitle="Submit your application to be matched with an industry mentor"
               icon={<Icon as={AiOutlineVideoCamera} boxSize="6" />}
             >
             </ListItem>
           </Link>
           <ListItem
-            title="Interactive Learning Experiences"
-            subTitle="powered by Github"
+            title="June 12th: Final Offers Sent Out"
+            subTitle="Schedule your interview for the mentorship program"
             icon={<Icon as={AiOutlineGithub} boxSize="6" />}
           >
           </ListItem>
           <ListItem
-            title="Build a Project"
-            subTitle="Being mentored by an engineer"
+            title="June 21st - August 16th"
+            subTitle="Start learning and developing!"
             icon={<Icon as={AiOutlineBulb} boxSize="6" />}
           >
           </ListItem>
