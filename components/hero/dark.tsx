@@ -49,7 +49,7 @@ import {
               <LightMode>
                 <Button
                   as="a"
-                  href="#"
+                  href="https://github.com/bitprj/Intro-To-Serverless"
                   size="lg"
                   colorScheme="blue"
                   px="8"
@@ -60,7 +60,7 @@ import {
                 </Button>
                 <Button
                   as="a"
-                  href="#"
+                  href="https://github.com/bitprj/Intro-To-Serverless"
                   size="lg"
                   colorScheme="whiteAlpha"
                   px="8"

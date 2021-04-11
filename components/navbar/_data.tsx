@@ -66,6 +66,5 @@ export const links: Link[] = [
       },
     ],
   },
-  { label: 'Camp', href: '/camp' },
   { label: 'Blog', href: '/blog' },
 ]
