@@ -7,6 +7,7 @@ import { Landing } from '@components/hero/landing'
 import { Newsletter } from '@components/newsletter'
 import { TestimonialTwo } from '@components/testimonial/two'
 import { Feature } from '@components/hero/feature'
+import { FaBeer } from 'react-icons/fa'
 
 export default function Home() {
   const features =
@@ -14,14 +15,17 @@ export default function Home() {
     {
       desc : 'We are a global student organization developing interactive, engaging technical content for you.',
       title : 'Built for students, by students',
+      icon : FaBeer,
     },
     {
       desc : 'Engineers mentor our students through pair programming sessions. They share insights on job search and engineering best practices.',
       title : 'Built with the Industry',
+      icon : FaBeer,
     },
     {
       desc : 'Our courses are open source and free for all because we believe in the power of accessible technical education.',
       title : 'Free & Accessible',
+      icon : FaBeer,
     }
   ]
 
@@ -36,8 +40,8 @@ export default function Home() {
         cta1="Apply Now"
         cta2="Get Updates"
         image="/livecode.png"
-        cta1link="/course/serverless"
-        cta2link="#"
+        cta1link={'https://airtable.com/shro5TuOxWJ69gTbO'}
+        cta2link={'https://airtable.com/shr9hT8pEXpAAM00Z'}
       />
       <TestimonialTwo
         Name1="Serena Buxton"

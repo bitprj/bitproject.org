@@ -1,4 +1,4 @@
-import { Center, Stack, Text, useColorModeValue as mode } from '@chakra-ui/react'
+import { Center, Stack, Text, Box, useColorModeValue as mode } from '@chakra-ui/react'
 import * as React from 'react'
 
 interface FeatureProps {
