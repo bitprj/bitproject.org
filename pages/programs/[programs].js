@@ -8,9 +8,9 @@ import { BsArrowRight, BsClockFill } from 'react-icons/bs'
 import {Link,Box, SlideFade, SimpleGrid} from '@chakra-ui/react'
 import {Landing} from '@components/hero/landing'
 import { TestimonialTwo } from '@components/testimonial/two'
+import { Feature } from '@components/hero/feature'
 
-export default function Page({ heading, description, image, cta1, cta2, cta1link, cta2link, quotes}) {
-
+export default function Page({ heading, description, image, cta1, cta2, cta1link, cta2link, quotes, events}) {
   return (
       <Layout>
         <Landing
@@ -33,6 +33,11 @@ export default function Page({ heading, description, image, cta1, cta2, cta1link
             Image2={quotes[1].image.asset.url}
             Quote2={quotes[1].words}
         />
+        <Feature
+          Heading="Upcoming Events"
+          features={events}
+          Image={image}
+          />
       </Layout>
       
   );
@@ -67,6 +72,16 @@ export async function getStaticProps({ params }) {
               }
               words
             }
+        events {
+            title
+            date
+            image {
+              asset {
+                url
+              }
+            }
+            desc
+          }
             }
         }
     `,
@@ -85,7 +100,8 @@ export async function getStaticProps({ params }) {
       cta1link: pageData.cta1link,
       cta2: pageData.cta2,
       cta2link: pageData.cta2link,
-        quotes: pageData.quotes,
+      quotes: pageData.quotes,
+      events: pageData.events,
     },
   };
 }

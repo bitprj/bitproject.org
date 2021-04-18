@@ -75,17 +75,15 @@ const DesktopNavContent = (props: FlexProps) => {
       <HStack spacing="8" minW="240px" justify="space-between">
       <Spacer />
       {!session && <>
-        <Button as="a" href={`/api/auth/signin`}
-                onClick={(e) => {
-                  e.preventDefault()
-                  signIn()
-                }} colorScheme="blue" fontWeight="bold">
-          Get Updates
+        <Button as="a" href={'https://join.bitproject.org'}
+                colorScheme="blue" fontWeight="bold">
+          Join Our Discord
         </Button>
       </>}
       {session && <>
         <span >
               <small>Signed in as</small><br/>
+              
               <strong>{session.user.email || session.user.name}</strong>
         </span>
         <Button as="a" href={`/api/auth/signout`}

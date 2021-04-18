@@ -6,7 +6,7 @@ export const Logo = (props: HTMLChakraProps<'svg'> & { iconColor?: string }) => 
   const color = useToken('colors', iconColor)
   return (
     <div>
-      <Image src="/logo.svg"  width={150} height={50}/>
+      <Image src="/logo_white.svg"  width={150} height={50}/>
   </div>
   )
 }
