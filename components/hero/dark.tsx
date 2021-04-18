@@ -67,7 +67,7 @@ import {
                   fontWeight="bold"
                   fontSize="md"
                 >
-                  Create a Cabin
+                  
                 </Button>
               </LightMode>
             </Stack>
