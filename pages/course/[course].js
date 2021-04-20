@@ -53,7 +53,7 @@ export default function Page({ title, content, mainImage, quote, description, we
             ))}
 
           </SimpleGrid>
-          <Link fontSize="xl" fontWeight="bold" color='blue.600' >
+          <Link fontSize="xl" fontWeight="bold" color='blue.600' href="/blog">
             <span>View all articles</span>
             <Box as={BsArrowRight} display="inline-block" ms="2" />
           </Link>
