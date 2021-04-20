@@ -29,3 +29,4 @@ campdev/dist/index.html
 campdev/dist/static/css/main.css
 campdev/dist/static/js/app.bundle.js
 campdev/dist/static/js/vendor.bundle.js
+package-lock.json
