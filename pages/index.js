@@ -7,7 +7,7 @@ import { Landing } from '@components/hero/landing'
 import { Newsletter } from '@components/newsletter'
 import { TestimonialTwo } from '@components/testimonial/two'
 import { Feature } from '@components/hero/feature'
-import { FaBeer } from 'react-icons/fa'
+import { FaPencilAlt,FaGlobeEurope,FaHammer } from 'react-icons/fa'
 
 export default function Home() {
   const features =
@@ -15,17 +15,17 @@ export default function Home() {
     {
       desc : 'We are a global student organization developing interactive, engaging technical content for you.',
       title : 'Built for students, by students',
-      icon : FaBeer,
+      icon : <FaPencilAlt />,
     },
     {
       desc : 'Engineers mentor our students through pair programming sessions. They share insights on job search and engineering best practices.',
       title : 'Built with the Industry',
-      icon : FaBeer,
+      icon : <FaHammer />,
     },
     {
       desc : 'Our courses are open source and free for all because we believe in the power of accessible technical education.',
       title : 'Free & Accessible',
-      icon : FaBeer,
+      icon : <FaGlobeEurope />,
     }
   ]
 
