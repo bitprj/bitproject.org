@@ -38,13 +38,13 @@ export default function blog({ posts }) {
       <Box as="section" bg={mode('white.50', 'gray.800')} py={{ base: '10', sm: '24' }}>
         <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing="12" mb="10">
-          {posts.slice(1).map(({ title, slug, mainImage, authorName, authorPic }) => (
+          {posts.slice(1).map(({ title, slug, mainImage, description, authorName, authorPic }) => (
             <BlogCard
               media={mainImage}
               title={title}
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+              description={description}
               href={slug}
-              author={{ name: "Daniel", href: '#' }}
+              author={{ name: authorName /* , href: '#' */ }}
             />
             ))}
 
