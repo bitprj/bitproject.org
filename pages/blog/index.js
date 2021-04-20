@@ -49,10 +49,6 @@ export default function blog({ posts }) {
             ))}
 
           </SimpleGrid>
-          <Link fontSize="xl" fontWeight="bold" color={mode('blue.600', 'blue.400')}>
-            <span>View all articles</span>
-            <Box as={BsArrowRight} display="inline-block" ms="2" />
-          </Link>
         </Box>
       </Box>
     </Layout>
