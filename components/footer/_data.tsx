@@ -15,15 +15,20 @@ export const links: LinkGroupData[] = [
   {
     title: 'Get Involved',
     links: [
-      { label: 'For Students', href: '/students',
+      { label: 'Students', href: '/students',
         badge: (
         <Badge colorScheme="blue" variant="solid" fontSize="0.625rem">
           Apply
         </Badge>
       ),},
-      { label: 'Partner', href: '/partner' },
+      { label: 'Partner', href: '/partners',
+        badge: (
+        <Badge colorScheme="blue" variant="solid" fontSize="0.625rem">
+          Join Us
+        </Badge>
+      ),},
       {
-        label: 'Volunteer',
+        label: 'Volunteers',
         href: '/volunteer',
         badge: (
           <Badge colorScheme="blue" variant="solid" fontSize="0.625rem">
@@ -31,7 +36,12 @@ export const links: LinkGroupData[] = [
           </Badge>
         ),
       },
-      { label: 'Join', href: '/join' },
+      { label: 'Join', href: '/join',
+        badge: (
+        <Badge colorScheme="blue" variant="solid" fontSize="0.625rem">
+          Join Us
+        </Badge>
+      ),},
     ],
   },
   {
@@ -52,10 +62,10 @@ interface SocialLink {
 }
 
 export const socialLinks: SocialLink[] = [
-  { label: 'Facebook', icon: <FaFacebook />, href: '#' },
-  { label: 'Instagram', icon: <FaInstagram />, href: '#' },
-  { label: 'LinkedIn', icon: <FaLinkedin />, href: '#' },
-  { label: 'LinkedIn', icon: <FaTwitter />, href: '#' },
+  { label: 'Facebook', icon: <FaFacebook />, href: 'https://www.facebook.com/bitproject.org' },
+  { label: 'Instagram', icon: <FaInstagram />, href: 'https://www.instagram.com/bitprojectorg' },
+  { label: 'LinkedIn', icon: <FaLinkedin />, href: 'https://www.linkedin.com/company/bitprojectorg' },
+  { label: 'Twitter', icon: <FaTwitter />, href: 'https://www.twitter.com/bitprj' },
 ]
 
 interface FooterLink {

@@ -58,8 +58,7 @@ export const Footer = () => (
             Subscribe to our newsletter!
           </Text>
           <Text lineHeight="tall">
-            Get Overflow resources, curated content, and design inspiration delivered straight into
-            your inbox. Be the first to learn the news about new features and product updates.
+            Stay up to date with all of our resources and opportunities! We promise we won't spam.
           </Text>
           <SubscribeForm />
         </Box>
@@ -91,12 +90,6 @@ export const Footer = () => (
             ))}
           </HStack>
         </Stack>
-        <Box>
-          <Text>&copy; {new Date().getFullYear()} Envelope Inc</Text>
-          <Text mt="2">
-            Made with <Heart /> by Chakra Inc.
-          </Text>
-        </Box>
       </Flex>
     </Box>
   </Box>
