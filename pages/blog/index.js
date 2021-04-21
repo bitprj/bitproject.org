@@ -16,14 +16,15 @@ import { BlogCard } from '@components/blog/blogcard'
 import { Header } from '@components/blog/header'
 import { getSanityContent } from '@utils/sanity';
 import { BsArrowRight, BsClockFill } from 'react-icons/bs'
+import Meta from '@components/util/seo'
 
 export default function blog({ posts }) {
-  console.log(posts)
   return (
     <Layout home>
-      <Head>
-        <title>{posts.title}</title>
-      </Head>
+        <Meta 
+          title='Blog | Bit Project'
+          desc='Bit Project is a 501(c)(3) nonprofit making tech accessible'
+        /> 
       <Header 
         title={posts[0].title}
         image={posts[0].mainImage}
