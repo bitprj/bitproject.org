@@ -38,7 +38,7 @@ export default function Volunteer() {
         description="We provide awesome volunteer opportunities for engineers to give back to their communities."
         cta1="Be a Mentor"
         cta2="Learn More"
-        image="/becks.svg"
+        image="/volunteer.svg"
         cta1link="https://info421626.typeform.com/to/T6YYDgAP"
         cta2link="/serverless.pdf"
         
