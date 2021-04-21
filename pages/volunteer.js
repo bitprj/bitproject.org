@@ -3,8 +3,9 @@ import Layout from '../components/layout'
 import { Landing } from '@components/hero/landing'
 import { TestimonialTwo } from '@components/testimonial/two'
 import { Feature } from '@components/hero/feature'
-import { FcTwoSmartphones,FcGraduationCap,FcStatistics,FcAreaChart,FcElectricity,FcConferenceCall,FcCollaboration } from 'react-icons/fc'
+import { FcStatistics,FcConferenceCall } from 'react-icons/fc'
 import { FaRegHandshake } from 'react-icons/fa'
+import Meta from '@components/util/seo'
 
 export default function Volunteer() {
   const features =
@@ -28,9 +29,10 @@ export default function Volunteer() {
 
   return (
     <Layout home>
-      <Head>
-        <title>Bit Project</title>
-      </Head>
+      <Meta 
+        title='Volunteer | Bit Project'
+        desc='Bit Project is a 501(c)(3) nonprofit making tech accessible'
+        /> 
       <Landing
         heading="Make a Difference"
         description="We provide awesome volunteer opportunities for engineers to give back to their communities."

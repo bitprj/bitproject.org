@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import { Landing } from '@components/hero/landing'
 import { TestimonialTwo } from '@components/testimonial/two'
 import { Feature } from '@components/hero/feature'
+import Meta from '@components/util/seo'
 
 export default function Partner() {
   const features =
@@ -23,9 +24,10 @@ export default function Partner() {
 
   return (
     <Layout home>
-      <Head>
-        <title>Bit Project</title>
-      </Head>
+        <Meta 
+        title='Partner with Us | Bit Project'
+        desc='Bit Project is a 501(c)(3) nonprofit making tech accessible'
+        /> 
       <Landing
         heading="Is your company excited to help make tech accessible?"
         description="We provide cutting-edge, open source learning experiences to prepare students for careers in tech."

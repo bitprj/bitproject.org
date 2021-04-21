@@ -4,6 +4,7 @@ import { Landing } from '@components/hero/landing'
 import { TestimonialTwo } from '@components/testimonial/two'
 import { Feature } from '@components/hero/feature'
 import { FaPencilAlt,FaGlobeEurope,FaHammer } from 'react-icons/fa'
+import Meta from '@components/util/seo'
 
 export default function Home() {
   const features =
@@ -27,9 +28,10 @@ export default function Home() {
 
   return (
     <Layout home>
-      <Head>
-        <title>Bit Project</title>
-      </Head>
+        <Meta 
+        title='Bit Project'
+        desc='Bit Project is a 501(c)(3) nonprofit making tech accessible'
+        /> 
       <Landing
         heading="We equip students with technical superpowers"
         description="We provide cutting-edge, open source learning experiences to prepare students for careers in tech."

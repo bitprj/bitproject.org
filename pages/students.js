@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import { Landing } from '@components/hero/landing'
 import { TestimonialTwo } from '@components/testimonial/two'
 import { Feature } from '@components/hero/feature'
+import Meta from '@components/util/seo'
 
 export default function Students() {
   const features =
@@ -26,9 +27,10 @@ export default function Students() {
   ]  
   return (
     <Layout home>
-      <Head>
-        <title>Bit Project</title>
-      </Head>
+        <Meta 
+        title='For Students | Bit Project'
+        desc='Bit Project is a 501(c)(3) nonprofit making tech accessible'
+        /> 
       <Landing
         heading="Launch your ideas with Code"
         description="We provide cutting-edge, open source learning experiences to prepare students for careers in tech."
