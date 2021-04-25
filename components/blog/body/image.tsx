@@ -34,13 +34,13 @@ export default function Image({
         >
           {inView ||
             (supportsLazyLoading && (
-              <ChakraImage src={src} loading="lazy" width="100%" {...props} />
+              <ChakraImage src={src} loading="lazy" width="100%" py="1rem" {...props} />
             ))}
         </div>
       );
     } else {
       // Otherwise, just use the Chakra image component
-      return <ChakraImage src={src} {...props} />;
+      return <ChakraImage src={src} py="1rem" {...props} />;
     }
 
     // Or if you are using Cloudinary, it will move to here
