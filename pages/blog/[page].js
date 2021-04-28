@@ -5,10 +5,12 @@ import Layout from '@components/layout'
 import { Header } from '@components/blog/header'
 import components from '@components/blog/body'
 import {Box, SlideFade} from '@chakra-ui/react'
+import MDXComponents from "@components/blog/mdx/mdx-component";
+
 export default function Page({ title, content, mainImage, category, quote, description, authorName, authorPic, authorPosition }) {
-const renderedContent = hydrate(content, {components});
-console.log(description)
-console.log(quote)
+const renderedContent = hydrate(content, {
+  components: MDXComponents,
+});
 
   return (
     <Layout>
