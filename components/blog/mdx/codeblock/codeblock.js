@@ -9,7 +9,7 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 import Highlight from "./highlight";
-import { BiCheckCircle, HiOutlineDocumentDuplicate } from 'react-icons/fa'
+import { FaCheckCircle, FaCopy } from 'react-icons/fa'
 
 const Codeblock = (props) => {
   const showLines = true;
@@ -63,7 +63,7 @@ const Codeblock = (props) => {
               hasCopied ? useColorModeValue("green.50", "green.800") : undefined
             }
             icon={
-              hasCopied ? <BiCheckCircle size={18} /> : <HiOutlineDocumentDuplicate size={18} />
+              hasCopied ? <FaCheckCircle size={18} /> : <FaCopy size={18} />
             }
           />
         </HStack>
