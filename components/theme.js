@@ -3,7 +3,6 @@ import { mode } from "@chakra-ui/theme-tools";
 
 const customTheme = extendTheme({
   fonts: {
-    heading: "'Inter', sans-serif",
     body: "'Inter', sans-serif",
   },
   styles: {
@@ -22,12 +21,14 @@ const customTheme = extendTheme({
         },
       },
       a: {
-        color: mode("blue.500", "blue.200")(props),
+        color: mode("blue.300", "blue.200")(props),
         transition: "color 0.15s",
         transitionTimingFunction: "ease-out",
         fontWeight: "500",
+        textDecorationStyle: "dashed",
         _hover: {
-          color: mode("blue.600", "blue.300")(props),
+          color: mode("blue.100", "blue.300")(props) ,
+          
         },
       },
     }),
