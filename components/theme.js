@@ -118,7 +118,8 @@ const customTheme = extendTheme({
     },
     p: {
       mt: "1.25rem",
-      lineHeight: 1.7,
+      lineHeight: 1.9,
+      fontSize: "1.25rem",
       "blockquote &": {
         mt: 0,
       },

@@ -26,7 +26,7 @@ const renderedContent = hydrate(content, {
       />
       <Box as="section" pt="16" pb="24">
       <SlideFade in>
-      <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>
+      <Box maxW={{ base: 'xl', md: '5xl' }} mx="auto" px={{ base: '6', md: '8' }}>
       {renderedContent}
       </Box>
       </SlideFade>
