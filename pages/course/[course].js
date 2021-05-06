@@ -1,6 +1,6 @@
 import { getSanityContent } from '@utils/sanity';
 import Layout from '@components/layout'
-import { Header } from '@components/hero/header'
+import { Header } from '@components/header'
 import { Card } from '@components/course/card'
 import { BlogCard } from '@components/blog/blogcard'
 import { Course } from '@components/course/course'
