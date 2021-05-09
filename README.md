@@ -1,8 +1,1 @@
-{
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": ["components/*"]
-    }
-  }
-}
+readme updates
