@@ -4,7 +4,6 @@ import {
     Circle,
     Heading,
     Img,
-    SimpleGrid,
     Stack,
     Text,
     VisuallyHidden,
@@ -14,7 +13,6 @@ import {
   } from '@chakra-ui/react'
   import * as React from 'react'
   import { FaPlay } from 'react-icons/fa'
-  import { Testimonial } from '@components/testimonial'
 
   export const Landing = ({ heading, description,cta1, cta2, image, play, cta1link, cta2link }) => {
     return (

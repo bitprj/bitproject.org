@@ -1,14 +1,14 @@
 import { getSanityContent } from '@utils/sanity';
 import Layout from '@components/layout'
-import { Header } from '@components/hero/header'
+import { Header } from '@components/header'
 import { Card } from '@components/course/card'
 import { BlogCard } from '@components/blog/blogcard'
 import { Course } from '@components/course/course'
 import { BsArrowRight, BsClockFill } from 'react-icons/bs'
 import {Link,Box, SlideFade, SimpleGrid} from '@chakra-ui/react'
-import {Landing} from '@components/hero/landing'
+import {Landing} from '@components/landing'
 import { TestimonialTwo } from '@components/testimonial/two'
-import { Feature } from '@components/hero/feature'
+import { Feature } from '@components/feature'
 
 export default function Page({ heading, description, image, cta1, cta2, cta1link, cta2link, quotes, events}) {
   return (

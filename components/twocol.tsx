@@ -10,7 +10,7 @@ import {
   } from '@chakra-ui/react'
   import * as React from 'react'
   
-  export function Hero() {
+  export function TwoCol() {
     return (
       <Box as="section" bg={mode('gray.50', 'gray.800')} pt="24" pb="12" overflow="hidden">
         <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" px={{ base: '6', md: '8' }}>

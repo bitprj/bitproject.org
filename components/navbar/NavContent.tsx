@@ -16,7 +16,6 @@ import { NavMenu } from './NavMenu'
 import { Submenu } from './Submenu'
 import { ToggleButton } from './ToggleButton'
 import { links } from './_data'
-import { signIn, signOut, useSession } from 'next-auth/client'
 
 const MobileNavContext = (props: FlexProps) => {
   const { isOpen, onToggle } = useDisclosure()
@@ -54,7 +53,6 @@ const MobileNavContext = (props: FlexProps) => {
 }
 
 const DesktopNavContent = (props: FlexProps) => {
-  const [ session, loading ] = useSession()
   return (
     <Flex className="nav-content__desktop" align="center" justify="space-between" {...props}>
       <Box as="a" href="/" rel="home">
@@ -74,26 +72,10 @@ const DesktopNavContent = (props: FlexProps) => {
       </HStack>
       <HStack spacing="8" minW="240px" justify="space-between">
       <Spacer />
-      {!session && <>
         <Button as="a" href={'https://join.bitproject.org'}
                 colorScheme="blue" fontWeight="bold">
           Join Our Discord
         </Button>
-      </>}
-      {session && <>
-        <span >
-              <small>Signed in as</small><br/>
-              
-              <strong>{session.user.email || session.user.name}</strong>
-        </span>
-        <Button as="a" href={`/api/auth/signout`}
-                onClick={(e) => {
-                  e.preventDefault()
-                  signOut()
-                }} colorScheme="blue" fontWeight="bold">
-          Log off
-        </Button>
-      </>}
       </HStack>
     </Flex>
   )
