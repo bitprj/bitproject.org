@@ -3,6 +3,25 @@
   "project": {
     "name": "campdev"
   },
+  "__experimental_spaces": [
+    {
+      "name": "production",
+      "title": "Prod",
+      "default": true,
+      "api": {
+        "projectId": "ih43eexw",
+        "dataset": "production"
+      }
+    },
+    {
+      "name": "staging",
+      "title": "Staging",
+      "api": {
+        "projectId": "ih43eexw",
+        "dataset": "staging"
+      }
+    }
+  ],  
   "api": {
     "projectId": "ih43eexw",
     "dataset": "production"
