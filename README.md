@@ -1,8 +1,1 @@
-{
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": ["components/*"]
-    }
-  }
-}
+this is the readme
