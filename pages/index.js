@@ -1,8 +1,7 @@
-import Head from 'next/head'
 import Layout from '../components/layout'
-import { Landing } from '@components/hero/landing'
+import { Landing } from '@components/landing'
 import { TestimonialTwo } from '@components/testimonial/two'
-import { Feature } from '@components/hero/feature'
+import { Feature } from '@components/feature'
 import { FaPencilAlt,FaGlobeEurope,FaHammer } from 'react-icons/fa'
 import Meta from '@components/util/seo'
 

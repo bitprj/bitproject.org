@@ -1,9 +1,6 @@
 import Head from 'next/head'
 import Layout from '../components/layout'
-import Link from 'next/link'
-import Date from '../components/date'
-import { Hero } from '@components/hero'
-import { Dark } from '@components/hero/dark'
+import { TwoCol } from '@components/twocol'
 
 export default function Home() {
   return (
@@ -11,8 +8,7 @@ export default function Home() {
       <Head>
         <title>Bit Project</title>
       </Head>
-      <Dark />
-      <Hero />
+      <TwoCol />
     </Layout>
   )
 }
