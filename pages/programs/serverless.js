@@ -64,6 +64,9 @@ export default function Page() {
             image="/serverless.png"
             cta1link="https://www.notion.so/bitproject/Welcome-to-Serverless-Camp-e218f86daf4248509350709cd9fa8017"
         />
+        <Course 
+            Description="Managing a server is pretty complicated, and building with serverless architectures simplifies this process. As a student, mastering serverless functions can help you to build projects that solve real-world problems by integrating APIs, constructing user interfaces, and analysing data. Javascript is the core language of this course - one of the most in-demand languages to learn in the industry. "
+        />
         <TestimonialTwo
             Name1="Daniel Kim"
             Role1="Student at McKinley High"
@@ -74,9 +77,6 @@ export default function Page() {
             Image2="/daniel.png"
             Quote2="Did you know that platypuses are cool and they are the username of Daniel"
         /> 
-        <Course 
-            Description="Managing a server is pretty complicated, and building with serverless architectures simplifies this process. As a student, mastering serverless functions can help you to build projects that solve real-world problems by integrating APIs, constructing user interfaces, and analysing data. Javascript is the core language of this course - one of the most in-demand languages to learn in the industry. "
-        />
               <Box maxW={{ base: 'xl', md: '7xl' }} mx="auto" mb="24">
                 <SimpleGrid columns={{ base:1, md:2, lg:3}} gap="6"> 
                   {weeks.map((p) => (
