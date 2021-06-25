@@ -72,7 +72,6 @@ import {
             <Box
               mb={{ base: '-20', md: '-40' }}
               className="group"
-              cursor="pointer"
               position="relative"
               rounded="lg"
               overflow="hidden"
@@ -84,27 +83,6 @@ import {
                 width="80%"
               />
               </Center>
-              {play == 0 &&
-              <Circle
-                size="20"
-                as="button"
-                bg="white"
-                shadow="lg"
-                color="blue.600"
-                position="absolute"
-                top="50%"
-                left="50%"
-                transform="translate3d(-50%, -50%, 0)"
-                fontSize="xl"
-                transition="all 0.2s"
-                _groupHover={{
-                  transform: 'translate3d(-50%, -50%, 0) scale(1.05)',
-                }}
-              >
-                <VisuallyHidden>Play demo video</VisuallyHidden>
-                <FaPlay />
-              </Circle>
-              }
             </Box>
           </Box>
         </Box>
